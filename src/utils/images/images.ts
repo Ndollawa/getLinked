@@ -25,7 +25,7 @@ import GoldMedal from "@/assets/images/gold_medal.png";
 import BronzMedal from "@/assets/images/bronze_medal.png";
 import Libertylogo from "@/assets/images/libertylogo.png";
 import Libertylogo2 from "@/assets/images/libertylogo2.png";
-import Paybox from "@/assets/images/paybox.png";
+import Paybox from "@/assets/images/Paybox.png";
 import Reg from "@/assets/images/reg.png";
 import Register from "@/assets/images/register.png";
 import Back from "@/assets/images/back.png";
