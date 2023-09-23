@@ -1,0 +1,115 @@
+@tailwind base;
+
+@layer base {
+  .cta-btn {
+    @apply text-white bg-gradient-to-r from-[#D434FE] via-[#D434FE] to-[rgb(144,58,255)] px-4 py-2 w-36 flex items-center justify-center;
+  }
+  .secondary-text-color {
+    @apply text-[rgb(212,52,254)];
+  }
+  .bg-primary {
+    @apply bg-[rgb(21,14,40)];
+  }
+}
+
+.hero {
+  /* background: radial-gradient(
+    circle,
+    rgba(212, 52, 254, 1) 0%,
+    rgba(21, 14, 40, 1) 30%
+  ),url(/_next/static/media/matrix.47299e78.png) no-repeat right top; */
+  @apply w-full grid grid-cols-1 text-white relative bg-[url('../../assets/images/matrix.png')] bg-no-repeat bg-right-top;
+}
+.hero__flare {
+  background: radial-gradient(
+    circle,
+    rgba(144, 58, 255, 0.6) 0%,
+    transparent 50%
+  );
+  @apply md:left-[40px] md:-top-32 md:w-[40rem] md:h-[40rem] z-0 absolute opacity-70;
+}
+.hero__heading {
+  @apply w-full flex items-center justify-center md:justify-end container;
+}
+.hero__heading h2 {
+  @apply md:text-2xl my-5 italic relative md:tracking-widest font-semibold;
+}
+.hero__heading h2 span svg {
+  @apply w-32 md:w-52 hover:fill-blue-500 absolute right-0 -bottom-4;
+}
+.hero__content {
+  @apply h-full z-[1]  grid place-content-center grid-cols-1 md:grid-cols-2 gap-8 grid-rows-1 container m-auto;
+}
+.hero__content--intro {
+  @apply w-full flex flex-col  justify-center md:justify-start relative text-white pt-20;
+}
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.hero__content--intro__star--one {
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  @apply absolute w-3 md:w-5 left-24 hover:animate-none top-5;
+}
+.hero__content--intro__star--two {
+  animation: ping 4s cubic-bezier(0, 0, 0.2, 1) infinite;
+  @apply absolute w-3 md:w-5 right-2 hover:animate-none top-10 opacity-60;
+}
+.hero__content--intro__star--three {
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  @apply absolute w-3 md:w-5 hover:animate-none right-16 bottom-40 md:right-80  md:bottom-80 opacity-70;
+}
+.hero__content--intro__box {
+  @apply w-full flex flex-col justify-center md:justify-start text-white;
+}
+.hero__content--intro__box .hero__content--intro__box--heading {
+  @apply relative p-4 text-center md:text-start;
+}
+.hero__content--intro__box--heading__image--one {
+  @apply absolute w-6 -top-4 right-20 md:w-14 md:right-[20rem] md:-top-16;
+}
+.hero__content--intro__box--heading__image--two {
+  @apply inline align-middle w-8 md:w-14 relative bottom-3 ml-2;
+}
+.hero__content--intro__box--heading__image--three {
+  @apply inline align-middle w-8 md:w-14 relative bottom-3 ml-2;
+}
+
+.hero__content--intro__box div > h1 {
+  @apply relative inline w-full md:w-[80%] text-4xl md:text-6xl mb-5 text-white font-extrabold;
+}
+
+.hero__content--intro__box div > h1 span {
+  @apply secondary-text-color;
+}
+.hero__content--intro__box div > p {
+  @apply md:text-xl text-white  text-justify md:text-start px-4 mb-6 z-[1];
+}
+.hero__content--intro__box > button {
+  @apply mb-8 md:mb-16 mt-2 self-center md:self-start text-xl cta-btn;
+}
+.hero__content--timer {
+  @apply mb-4 flex justify-center md:justify-start;
+}
+.hero__content--timer span {
+  @apply mx-2 text-7xl text-white font-light relative;
+}
+.hero__content--timer span sub {
+  @apply md:mb-4 text-xl text-white font-light relative bottom-1;
+}
+.hero__content--images {
+  @apply w-full relative;
+}
+.hero__content--images__image {
+  @apply w-full;
+}
+.hero__content--images__overlay {
+  @apply absolute z-[2] top-2 left-20 opacity-80;
+}
+.hero__content--images__lensflare {
+  @apply absolute z-[1] -top-44 right-0;
+}

@@ -1,0 +1,35 @@
+.privacy {
+  @apply min-h-[100vh];
+}
+.privacy .ds {
+  @apply mx-16;
+}
+.privacy .security {
+  @apply absolute  left-16 -top-36 z-[-1];
+}
+.faq .question--two {
+  @apply absolute  left-48 -top-12;
+}
+.faq .question--three {
+  @apply absolute  left-72 top-8;
+}
+.privacy .p-muted {
+  @apply text-sm text-gray-400 mb-10;
+}
+.privacy .p {
+  @apply text-base mb-10;
+}
+/* .privacy > p:first-child {
+  @apply text-sm  mb-10;
+} */
+.privacy__container {
+  background: rgba(217, 217, 217, 0.03);
+
+  @apply w-full  p-16 border-[--secondary-color] border-2 rounded-lg min-h-[20rem] flex flex-col items-center md:justify-start justify-center mb-5;
+}
+.privacy__container > div {
+  @apply flex flex-col items-center md:justify-start justify-center;
+}
+.privacy__container div p {
+  @apply mb-10;
+}

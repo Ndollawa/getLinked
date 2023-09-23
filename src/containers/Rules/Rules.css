@@ -1,0 +1,46 @@
+.flare--one {
+  background: radial-gradient(
+    circle,
+    rgba(144, 58, 255, 0.6) 0%,
+    transparent 50%
+  );
+  opacity: 0.7;
+  content: "";
+  width: 40rem;
+  height: 40rem;
+  z-index: 0;
+  position: absolute;
+  bottom: 15px;
+  left: 30px;
+}
+.flare--two {
+  background: radial-gradient(
+    circle,
+    rgba(144, 58, 255, 0.6) 0%,
+    transparent 50%
+  );
+  content: "";
+  width: 40rem;
+  height: 40rem;
+  z-index: 1;
+  position: absolute;
+  bottom: -16rem;
+  right: -20rem;
+}
+.rules .circle-gradient {
+  @apply w-32 h-32 z-0 rounded-full bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] absolute left-24 top-40;
+}
+
+.rules .star--one {
+  @apply absolute -left-64 top-12;
+}
+.rules .star--two {
+  @apply absolute right-[1rem] bottom-8 opacity-60;
+}
+/* @keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+} */

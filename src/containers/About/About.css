@@ -1,0 +1,6 @@
+.about .star--one {
+  @apply absolute left-44 top-44;
+}
+.about .star--two {
+  @apply absolute -right-[70rem] top-40 opacity-60;
+}
