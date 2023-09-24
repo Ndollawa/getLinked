@@ -87,8 +87,11 @@ export default function Register() {
                     Please review your registration details before submitting
                   </p>
                   <div className="confirmation">
-                    <input type="checkbox" name="confirmation" id="" />I agreed
-                    with the event terms and conditions and privacy policy
+                    <input type="checkbox" name="confirmation" id="" />
+                    <p>
+                      I agreed with the event terms and conditions and privacy
+                      policy
+                    </p>
                   </div>
                   <div className="grid grid-cols-1 place-items-center">
                     <button type="submit" className="cta-btn">

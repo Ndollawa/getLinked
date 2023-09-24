@@ -21,7 +21,7 @@
   @apply grid grid-cols-3 p-24 w-9/12 z-30 justify-center items-center;
 }
 .partners__box > div > div {
-  @apply flex p-4 gap-4 mx-8 justify-center items-center;
+  @apply flex py-6 px-3 gap-5 mx-8 justify-center items-center;
 }
 /* .partners__box > div > div :nth-child(odd) {
   @apply p-2 m-2 border-[--secondary-color]  border-b-2;

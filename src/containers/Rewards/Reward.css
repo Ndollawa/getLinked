@@ -1,9 +1,40 @@
-.faq .question--one {
+.rewards .question--one {
   @apply absolute  left-28 top-8;
 }
-.faq .question--two {
+.rewards .question--two {
   @apply absolute  left-48 -top-12;
 }
-.faq .question--three {
+.rewards .question--three {
   @apply absolute  left-72 top-8;
+}
+
+.rewards__box {
+  @apply relative flex gap-2 md:gap-5 w-full my-40;
+}
+.rewards__card {
+  @apply relative grid grid-cols-1 place-items-center w-64 bg-[#d634fe1c] h-56 md:h-72 border-[--secondary-color] border-2 rounded-lg py-5;
+}
+.rewards__card:not(:nth-child(2)) {
+  @apply h-36 md:h-56;
+}
+.rewards__card > div h2 {
+  @apply font-semibold text-xl md:text-2xl text-center;
+}
+.rewards__card > div p {
+  @apply text-base font-semibold text-center;
+}
+.rewards__card > div > div {
+  @apply text-base sm:text-xl md:text-2xl secondary-text-color font-bold text-center;
+}
+.rewards__card:not(:nth-child(2)) > div {
+  @apply mt-10;
+}
+.rewards__card.silver-medal > img {
+  @apply absolute -top-16 right-[1rem];
+}
+.rewards__card.gold-medal > img {
+  @apply absolute -top-24;
+}
+.rewards__card.bronze-medal > img {
+  @apply absolute  -top-16 right-[1rem];
 }

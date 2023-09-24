@@ -178,50 +178,6 @@ main {
     @apply rounded text-white bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] px-4 py-2 w-36 flex items-center justify-center;
   }
 
-  header {
-    @apply w-full h-20 bg-primary text-white;
-  }
-  .nav {
-    @apply flex items-center relative h-full justify-between container;
-  }
-  .nav__logo,
-  .footer_logo {
-    @apply w-40 flex items-center justify-center;
-  }
-  .nav__logo h3,
-  .footer_logo h3 {
-    @apply flex items-center text-2xl  md:text-4xl text-white font-bold;
-  }
-  .nav__logo h3 span,
-  .footer_logo h3 span {
-    @apply secondary-text-color;
-  }
-  .nav__menu {
-    @apply hidden w-72 shadow-md md:shadow-none z-[9999] md:z-0 md:w-[80%] absolute p-4 top-24 md:top-0 md:right-0 right-2 bg-primary md:bg-none md:relative md:flex md:items-center md:justify-between;
-  }
-  .nav__menu--close {
-    @apply text-white text-2xl flex w-full mr-10 mt-2 justify-end md:hidden;
-  }
-  .nav__menu--list {
-    @apply block md:flex md:items-center md:justify-around gap-4;
-  }
-  .nav__menu--list__item {
-    @apply block px-6 py-3 md:flex items-center  md:justify-center;
-  }
-  .nav__menu--list__item a {
-    @apply flex items-center md:justify-center capitalize;
-  }
-  /* .nav__menu--list__item a.active {
-    @apply text-gradient-to-r from-[--secondary-color] to-[--tertiary-color];
-  } */
-  .nav__menu--cta {
-    @apply m-5 md:flex cta-btn;
-  }
-
-  .nav__mobile--toogler {
-    @apply md:hidden m-5 w-10 text-4xl text-white font-semibold hover:cursor-pointer;
-  }
-
   .gradient-circle {
     @apply w-32 h-32 z-[-1] rounded-full bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] left-24 top-40;
   }

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { clashDisplay } from "@/utils/fonts/fonts";
+import "./Nav.css";
 
 const Nav = () => {
   const [toggleMenu, setToggleMenu] = useState(false);

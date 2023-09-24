@@ -16,12 +16,7 @@
 .privacy .p-muted {
   @apply text-sm text-gray-400 mb-10;
 }
-.privacy .p {
-  @apply text-base mb-10;
-}
-/* .privacy > p:first-child {
-  @apply text-sm  mb-10;
-} */
+
 .privacy__container {
   background: rgba(217, 217, 217, 0.03);
 
@@ -30,6 +25,6 @@
 .privacy__container > div {
   @apply flex flex-col items-center md:justify-start justify-center;
 }
-.privacy__container div p {
+.privacy__container div > p {
   @apply mb-10;
 }

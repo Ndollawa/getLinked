@@ -4,6 +4,7 @@ import Image from "next/image";
 import {
   Libertylogo,
   Libertylogo2,
+  Lines,
   Paybox,
   Question,
   VizualPlus,
@@ -22,27 +23,31 @@ const PartnersSection = () => {
         <h1 className={clashDisplay.className}>Partners and Sponsors</h1>
         <p className="">
           Getlinked Hackathon 1.0 is honored to have the following major
+          <br />
           companies as its partners and sponsors
         </p>
       </div>
       <div className="partners__box">
-        <div className="">
-          <div className="border-b">
-            <Image src={Libertylogo2} height={35} alt="" />
+        <div className="relative">
+          <div className="absolute place-self-center ">
+            <Image src={Lines} width={520} className="" />
           </div>
-          <div className="border-l border-r">
+          <div className="">
+            <Image src={Libertylogo2} height={55} alt="" />
+          </div>
+          <div className="">
             <Image src={Libertylogo} height={70} alt="" />
           </div>
-          <div className="border-b">
+          <div className="">
             <Image src={Winwise} height={70} alt="" />
           </div>
-          <div className="border-r">
-            <Image src={Wisper} height={35} alt="" />
+          <div className="">
+            <Image src={Wisper} height={55} alt="" />
           </div>
-          <div className="border-t">
+          <div className="">
             <Image src={Paybox} height={70} alt="" />
           </div>
-          <div className="border-l">
+          <div className="pl-5">
             <Image src={VizualPlus} height={70} alt="" />
           </div>
         </div>

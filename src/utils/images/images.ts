@@ -30,6 +30,7 @@ import Reg from "@/assets/images/reg.png";
 import Register from "@/assets/images/register.png";
 import Back from "@/assets/images/back.png";
 import Congratulations from "@/assets/images/congratulation.png";
+import Lines from "@/assets/images/lines.png";
 
 export {
   HeroImage,
@@ -64,4 +65,5 @@ export {
   Register,
   Back,
   Congratulations,
+  Lines,
 };
