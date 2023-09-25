@@ -1,4 +1,3 @@
-import HeroImage from "@/assets/images/hero-image.png";
 import HeroImageOverlay from "@/assets/images/hero-image-overlay.png";
 import LensFlare from "@/assets/images/lensflare.png";
 import Matrix from "@/assets/images/matrix.png";
@@ -31,6 +30,10 @@ import Register from "@/assets/images/register.png";
 import Back from "@/assets/images/back.png";
 import Congratulations from "@/assets/images/congratulation.png";
 import Lines from "@/assets/images/lines.png";
+import FaqStars from "@/assets/images/faq-stars.png";
+import PrivacyStars from "@/assets/images/privacy-stars.png";
+import FooterStars from "@/assets/images/footer-stars.png";
+import HeroImage from "@/assets/images/hero-image.png";
 
 export {
   HeroImage,
@@ -66,4 +69,7 @@ export {
   Back,
   Congratulations,
   Lines,
+  FaqStars,
+  PrivacyStars,
+  FooterStars,
 };

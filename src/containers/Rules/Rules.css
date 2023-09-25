@@ -27,8 +27,15 @@
   bottom: -16rem;
   right: -20rem;
 }
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
 .rules .circle-gradient {
-  @apply w-32 h-32 z-0 rounded-full bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] absolute left-24 top-40;
+  @apply w-32 h-32 z-0 rounded-full bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] absolute right-36 top-8 hidden md:block;
 }
 
 .rules .star--one {
@@ -37,10 +44,3 @@
 .rules .star--two {
   @apply absolute right-[1rem] bottom-8 opacity-60;
 }
-/* @keyframes ping {
-  75%,
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-} */

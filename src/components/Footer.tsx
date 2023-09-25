@@ -2,11 +2,16 @@ import React from "react";
 import { clashDisplay } from "@/utils/fonts/fonts";
 import "./Footer.css";
 import Link from "next/link";
+import { FooterStars } from "@/utils/images/images";
+import Image from "next/image";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__box">
+        <div className="faq-stars -z-2 star--two absolute w-full">
+          <Image src={FooterStars} alt="faq-stars" />
+        </div>
         <div className="cols-span-12 md:cols-span-6">
           <div>
             <div className="footer__logo">

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Question, Faq as img } from "@/utils/images/images";
 import DataDescription from "@/components/DataDescription";
 import "./Timeline.css";
+import { clashDisplay } from "@/utils/fonts/fonts";
 
 const TimelineSection = () => {
   const criteria = [
@@ -44,44 +45,34 @@ specific technologies or APIs, and any other competition-specific requirements.`
     <DataDescription key={i} title={c.title} content={c.content} />
   ));
   return (
-    <section className="faq relative h-[100vh]">
+    <section className="timeline relative h-[100vh]">
       <div className="flare--one"></div>
       <div className="flare--two"></div>
-      <SectionDescription
-        title="Frequently Asked"
-        subTitle="Questions"
-        description="We got answers to the questions that you might
-want to ask about getlinked Hackathon 1.0"
-        content={
-          <>
-            {judgingCriteria}
-            <div className="w-full flex flex-col items-center md:justify-start justify-center">
-              <button className="my-5 md:self-start text-sm px-4 py-2 cta-btn">
-                Read More
-              </button>
-            </div>
-          </>
-        }
-        dir="rtl"
-        media={
-          <>
-            <div className="relative">
-              <div className="question--one">
-                <Image src={Question} width={25} alt="q-1" />
-              </div>
-
-              <div className="question--two">
-                <Image src={Question} width={40} alt="q-2" />
-              </div>
-              <div className="question--three">
-                <Image src={Question} width={25} alt="q-3" />
-              </div>
-
-              <Image src={img} alt="rules and guidelines" />
-            </div>
-          </>
-        }
-      />
+      <div className="timeline__heading">
+        <h1 className={clashDisplay.className}>Timeline </h1>
+        <p className="">
+          Here is the breakdown of the time we anticipate using for the upcoming
+          event.
+        </p>
+      </div>
+      <div className="timeline__box">
+        <div className="timeline__box--contents">
+          <div className="content">
+            <h3 className={clashDisplay.className}>Hackathon Announcement</h3>
+            <p>
+              The getlinked tech hackathon 1.0 is formally announced to the
+              general public and teams begin to get ready to register
+            </p>
+          </div>
+          <div className="bullet">
+            <div>1gg</div>
+            <div>2</div>
+          </div>
+          <div className="date">
+            <h3 className={clashDisplay.className}>November 18, 2023</h3>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

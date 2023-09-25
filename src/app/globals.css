@@ -49,7 +49,7 @@ main {
     color: #fff;
   }
   section {
-    @apply bg-primary pt-[5rem] px-[7%] border-b-2 border-[rgba(128,128,128,0.36)];
+    @apply bg-primary  pt-[3rem] px-[2%] md:pt-[5rem] md:px-[7%] md:border-b-2 md:border-[rgba(128,128,128,0.36)];
   }
   .center {
     @apply grid grid-cols-1 items-center;
@@ -183,3 +183,19 @@ main {
   }
 }
 /* hidden md: */
+.star--one {
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+.star--two {
+  animation: ping 4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+.star--three {
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

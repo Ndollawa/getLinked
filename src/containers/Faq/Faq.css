@@ -1,9 +1,9 @@
 .faq .question--one {
-  @apply absolute  left-28 top-8;
+  @apply absolute animate-bounce  left-28 top-8;
 }
 .faq .question--two {
-  @apply absolute  left-48 -top-12;
+  @apply absolute animate-bounce  left-48 -top-12;
 }
 .faq .question--three {
-  @apply absolute  left-72 top-8;
+  @apply absolute  animate-bounce left-72 top-8;
 }

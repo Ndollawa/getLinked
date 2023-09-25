@@ -1,7 +1,7 @@
 import React from "react";
 import SectionDescription from "@/components/SectionDescription";
 import Image from "next/image";
-import { Vector, Security } from "@/utils/images/images";
+import { Vector, Security, PrivacyStars } from "@/utils/images/images";
 import DataDescription from "@/components/DataDescription";
 import { AiFillCheckCircle } from "react-icons/ai";
 import "./Privacy.css";
@@ -11,6 +11,9 @@ const PrivacySection = () => {
     <section className="privacy relative h-[100vh]">
       <div className="flare--one"></div>
       <div className="flare--two"></div>
+      <div className="faq-stars -z-2 star--two absolute w-full">
+        <Image src={PrivacyStars} alt="faq-stars" />
+      </div>
       <SectionDescription
         title="Privacy Policy and"
         subTitle="Terms"
@@ -114,6 +117,7 @@ const PrivacySection = () => {
                 src={Security}
                 width={360}
                 height={720}
+                className="lock"
                 alt="rules and guidelines"
               />
             </div>

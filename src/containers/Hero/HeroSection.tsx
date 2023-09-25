@@ -42,21 +42,9 @@ const HeroSection = () => {
       <div className="hero__flare"></div>
       <div className="hero__content">
         <div className="hero__content--intro">
-          <Image
-            src={Star}
-            className="hero__content--intro__star--one"
-            alt="star"
-          />
-          <Image
-            src={Star}
-            className="hero__content--intro__star--two"
-            alt="star"
-          />
-          <Image
-            src={Star}
-            className="hero__content--intro__star--three"
-            alt="star"
-          />
+          <Image src={Star} className="star--one" alt="star" />
+          <Image src={Star} className="star--two" alt="star" />
+          <Image src={Star} className="star--three" alt="star" />
           <div className="hero__content--intro__box">
             <div className="hero__content--intro__box--heading">
               <h1 className={clashDisplay.className}>

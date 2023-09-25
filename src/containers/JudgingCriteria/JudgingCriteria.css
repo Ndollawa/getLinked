@@ -1,25 +1,16 @@
 .cta-btn {
   @apply rounded text-white bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] px-4 py-2 w-36 flex items-center justify-center;
 }
-@keyframes ping {
-  75%,
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
+
 .judging-criteria .circle-gradient {
   @apply hidden md:block w-32 h-32 z-[-1] rounded-full bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] absolute left-20 -top-8;
 }
 .judging-criteria .star--one {
-  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
   @apply absolute left-32 -top-32;
 }
 .judging-criteria .star--two {
-  animation: ping 4s cubic-bezier(0, 0, 0.2, 1) infinite;
   @apply absolute left-[20rem] top-72 opacity-60;
 }
 .judging-criteria .star--three {
-  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
   @apply absolute left-[30rem] bottom-0;
 }

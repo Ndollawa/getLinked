@@ -23,7 +23,6 @@ const PartnersSection = () => {
         <h1 className={clashDisplay.className}>Partners and Sponsors</h1>
         <p className="">
           Getlinked Hackathon 1.0 is honored to have the following major
-          <br />
           companies as its partners and sponsors
         </p>
       </div>

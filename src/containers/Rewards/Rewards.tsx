@@ -11,6 +11,7 @@ import {
 import DataDescription from "@/components/DataDescription";
 import "./Reward.css";
 import { clashDisplay } from "@/utils/fonts/fonts";
+import { Star, StarPurple } from "@/utils/icons/icons";
 
 const RewardsSection = () => {
   const criteria = [
@@ -54,6 +55,10 @@ specific technologies or APIs, and any other competition-specific requirements.`
     <section className="rewards relative h-[100vh]" id="rewards">
       <div className="flare--one"></div>
       <div className="flare--two"></div>
+      <Image src={StarPurple} className="star--one" alt="star" />
+      <Image src={StarPurple} className="star--two" alt="star" />
+      <Image src={Star} className="star--three" alt="star" />
+
       <SectionDescription
         title="Prizes and"
         subTitle="Rewards"

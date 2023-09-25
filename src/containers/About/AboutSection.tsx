@@ -1,7 +1,7 @@
 import SectionDescription from "@/components/SectionDescription";
 import Image from "next/image";
 import React from "react";
-import { TheBigIdea, StarPurple } from "@/utils/images/images";
+import { TheBigIdea, StarPurple, Arrow } from "@/utils/images/images";
 import "./About.css";
 
 const AboutSection = () => {
@@ -15,6 +15,7 @@ const AboutSection = () => {
         {" "}
         <Image src={StarPurple} width={25} alt="star" />
       </div>
+
       <div className="container">
         <SectionDescription
           title="Introduction to getlinked"
@@ -26,7 +27,15 @@ your ideas into reality. Solving real-world problems, pushing the boundaries
 of technology, and creating solutions that can change the world,
 that's what we're all about!"
           dir="ltr"
-          media={<Image src={TheBigIdea} width={270} alt="the-big-idea" />}
+          media={
+            <div className="relative">
+              <div className="thebigidea"> </div>
+              <Image src={TheBigIdea} width={270} alt="the-big-idea" />
+              <div className="arrow">
+                <Image src={Arrow} width={50} alt="arrow" />
+              </div>
+            </div>
+          }
         />
       </div>
     </section>

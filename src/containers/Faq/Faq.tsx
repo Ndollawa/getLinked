@@ -1,9 +1,10 @@
 import React from "react";
 import SectionDescription from "@/components/SectionDescription";
 import Image from "next/image";
-import { Question, Faq as img } from "@/utils/images/images";
+import { FaqStars, Question, Faq as img } from "@/utils/images/images";
 import DataDescription from "@/components/DataDescription";
 import "./Faq.css";
+import FaqAccordion from "./FaqAccordion";
 
 const FaqSection = () => {
   const criteria = [
@@ -45,6 +46,9 @@ specific technologies or APIs, and any other competition-specific requirements.`
   ));
   return (
     <section className="faq relative h-[100vh]">
+      <div className="faq-stars -z-2 star--two absolute w-full">
+        <Image src={FaqStars} alt="faq-stars" />
+      </div>
       <div className="flare--one"></div>
       <div className="flare--two"></div>
       <SectionDescription
@@ -54,11 +58,27 @@ specific technologies or APIs, and any other competition-specific requirements.`
 want to ask about getlinked Hackathon 1.0"
         content={
           <>
-            {judgingCriteria}
-            <div className="w-full flex flex-col items-center md:justify-start justify-center">
-              <button className="my-5 md:self-start text-sm px-4 py-2 cta-btn">
-                Read More
-              </button>
+            <div className="z-[2] mx-auto my-5 px-5">
+              <div className="grid divide-y divide-neutral-200 max-w-xl mx-auto mt-8">
+                <FaqAccordion
+                  question="What is a SAAS platform?"
+                  answer="
+                SAAS platform is a cloud-based software service that allows
+                users to access and use a variety of tools and functionality."
+                />
+                <FaqAccordion
+                  question="What is a SAAS platform?"
+                  answer="
+                SAAS platform is a cloud-based software service that allows
+                users to access and use a variety of tools and functionality."
+                />
+                <FaqAccordion
+                  question="What is a SAAS platform?"
+                  answer="
+                SAAS platform is a cloud-based software service that allows
+                users to access and use a variety of tools and functionality."
+                />
+              </div>
             </div>
           </>
         }

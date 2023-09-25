@@ -1,6 +1,30 @@
+.about {
+  @apply py-20;
+}
 .about .star--one {
-  @apply absolute left-44 top-44;
+  @apply absolute  md:left-44 md:top-44;
 }
 .about .star--two {
-  @apply absolute -right-[70rem] top-40 opacity-60;
+  @apply absolute -right-56 bottom-8 md:-right-[45rem] lg:-right-[70rem] md:top-40 opacity-60;
+}
+.about .arrow {
+  animation: shapeMover 4s linear infinite;
+  @apply absolute left-[40%] -bottom-1 md:left-[80%] md:-bottom-12 lg:left-[50%] lg:bottom-1;
+}
+@keyframes shapeMover {
+  0%,
+  100% {
+    transform: perspective(400px) translateY(0) rotate(0deg) translateZ(0px)
+      translateX(0);
+  }
+  50% {
+    transform: perspective(400px) rotate(-20deg) translateZ(10px)
+      translateY(10px) translateX(10px);
+  }
+}
+.thebigidea {
+  @apply p-4 right-[15%] md:left-[20%] lg:left-[15%] top-[25%] bottom-[15%]  absolute h-36 left-[3.2rem] rounded-full w-36 md:w-[8.5rem] md:h-[8.5rem] lg:w-[9.5rem] lg:h-[9.5rem] border-2 border-white border-dashed animate-spin;
+}
+.about div.container div.relative:has(.thebigidea) {
+  @apply w-8/12;
 }

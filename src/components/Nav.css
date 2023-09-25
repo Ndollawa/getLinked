@@ -1,5 +1,5 @@
 header {
-  @apply w-full h-20 bg-primary text-white;
+  @apply w-full h-20 bg-[--primary-color] text-white;
 }
 .nav {
   @apply flex items-center relative h-full justify-between container;
@@ -8,34 +8,34 @@ header {
   @apply w-40 flex items-center justify-center;
 }
 .nav__logo h3 {
-  @apply flex items-center text-2xl  md:text-4xl text-white font-bold;
+  @apply flex items-center text-xl  md:text-2xl lg:text-4xl text-white font-bold;
 }
 .nav__logo h3 span {
-  @apply secondary-text-color;
+  @apply text-[--secondary-color];
 }
 .nav__menu {
-  @apply hidden w-72 shadow-md md:shadow-none z-[9999] md:z-0 md:w-[80%] absolute p-4 top-24 md:top-0 md:right-0 right-2 bg-primary md:bg-none md:relative md:flex md:items-center md:justify-between;
+  @apply hidden w-72 shadow-md md:shadow-none z-[9999] md:z-0 md:w-[80%] absolute p-4 top-24 md:top-0 md:right-0 right-2 bg-[--primary-color] md:bg-none md:relative md:flex md:items-center md:justify-between;
 }
 .nav__menu--close {
   @apply text-white text-2xl flex w-full mr-10 mt-2 justify-end md:hidden;
 }
 .nav__menu--list {
-  @apply block md:flex md:items-center md:justify-around gap-4;
+  @apply block md:flex md:items-center md:justify-between lg:justify-around md:gap-2 lg:gap-4;
 }
 .nav__menu--list__item {
-  @apply block px-6 py-3 md:flex items-center  md:justify-center;
+  @apply block px-6 py-3 md:px-3 md:py-1.5 lg:px-6 lg:py-3 md:flex items-center  md:justify-center;
 }
 .nav__menu--list__item a {
-  @apply flex items-center md:justify-center capitalize;
+  @apply flex items-center md:justify-center capitalize font-semibold;
 }
 .nav__menu--list__item a.active {
-  @apply bg-clip-text bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color];
 }
 .nav__menu--list__item:has(a.active) {
   @apply border-[--secondary-color] border-b-2;
 }
 .nav__menu--cta {
-  @apply m-5 md:flex cta-btn;
+  @apply m-5 md:flex rounded text-white bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] px-4 py-2 w-36 flex items-center justify-center;
 }
 
 .nav__mobile--toogler {
