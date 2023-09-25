@@ -17,8 +17,9 @@ import { Footer } from "@/components";
 
 export default function Home() {
   useEffect(() => {
+
    async function animate() {
-      if (refToComponent.current) {
+      if (typeOf window !== undefined) {
         const ScrollReveal = (await import("scrollreveal")).default
        // sr().reveal(refToComponent.current)
   ScrollReveal({
