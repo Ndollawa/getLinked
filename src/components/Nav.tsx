@@ -50,7 +50,7 @@ const Nav = () => {
   return (
     <>
       <header className={`header ${isSticky ? "sticky" : null} `}>
-        <nav className="nav">
+        <nav className="nav container">
           <div className="nav__logo">
             <h3 className={clashDisplay.className}>
               get<span>linked</span>
