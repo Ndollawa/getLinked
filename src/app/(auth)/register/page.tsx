@@ -9,7 +9,6 @@ import React, {
 } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import ScrollReveal from "scrollreveal";
 import {} from "@/containers";
 import "./Register.css";
 import { clashDisplay } from "@/utils/fonts/fonts";
@@ -33,9 +32,11 @@ export default function Register() {
   const createrange = (n: number) => Array.from({ length: n }, (_, i) => i + 1);
   const groupNoOptions = createrange(12);
   useEffect(() => {
+async function animate() {
+     
     if (typeof window !== "undefined") {
-      const shouldInitializeScrollReveal = true;
-      if (shouldInitializeScrollReveal) {
+        const ScrollReveal = (await import("scrollreveal")).default
+     
         ScrollReveal({
           reset: true,
           distance: "80px",
@@ -54,7 +55,7 @@ export default function Register() {
           origin: "right",
         });
       }
-    }
+    }animate()
   }, []);
   // console.log(await getCategories());
   const [formData, setFormData] = useState({
