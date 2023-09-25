@@ -19,7 +19,7 @@ export default function Home() {
   useEffect(() => {
 
    async function animate() {
-      if (typeOf window !== "undefined") {
+      if (typeof window !== "undefined") {
         const ScrollReveal = (await import("scrollreveal")).default
        // sr().reveal(refToComponent.current)
   ScrollReveal({
