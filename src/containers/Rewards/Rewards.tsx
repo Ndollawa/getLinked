@@ -5,6 +5,7 @@ import {
   BronzMedal,
   GoldMedal,
   Question,
+  RewardsStars,
   SilverMedal,
   Trophy as img,
 } from "@/utils/images/images";
@@ -53,62 +54,64 @@ specific technologies or APIs, and any other competition-specific requirements.`
   ));
   return (
     <section className="rewards relative lg:min-h-[100vh]" id="rewards">
-      <div className="flare--one"></div>
-      <div className="flare--two"></div>
-      <Image src={StarPurple} className="star--one" alt="star" />
+      <div className="faq-stars -z-2 animate-pulse absolute w-full">
+        <Image src={RewardsStars} alt="faq-stars" />
+      </div>
+      <div className="container w-full">
+        <SectionDescription
+          title="Prizes and"
+          subTitle="Rewards"
+          description={
+            <p className="mb-4 w-56 text-center md:text-left">
+              Highlight of the prizes or rewards for winners and for
+              participants
+            </p>
+          }
+          content={
+            <>
+              <Image src={StarPurple} className="star--two" alt="star" />
+              <Image src={Star} className="star--three" alt="star" />
+              <div className="rewards__box">
+                <div className="rewards__card silver-medal">
+                  <Image src={SilverMedal} width={130} alt="2nd runner up" />
+                  <div>
+                    <h2 className={clashDisplay.className}>2nd</h2>
+                    <p> Runner</p>
+                    <div className={clashDisplay.className}>N500 000</div>
+                  </div>
+                </div>
+                <div className="rewards__card gold-medal">
+                  <Image src={GoldMedal} width={320} alt="1st runner up" />
+                  <div>
+                    {" "}
+                    <h2 className={clashDisplay.className}>1st</h2>
+                    <p>Runner</p>
+                    <div className={clashDisplay.className}>N500 000</div>
+                  </div>
+                </div>
 
-      <SectionDescription
-        title="Prizes and"
-        subTitle="Rewards"
-        description={
-          <p className="mb-4 w-56 text-center md:text-left">
-            Highlight of the prizes or rewards for winners and for participants
-          </p>
-        }
-        content={
-          <>
-            <Image src={StarPurple} className="star--two" alt="star" />
-            <Image src={Star} className="star--three" alt="star" />
-            <div className="rewards__box">
-              <div className="rewards__card silver-medal">
-                <Image src={SilverMedal} width={130} alt="2nd runner up" />
-                <div>
-                  <h2 className={clashDisplay.className}>2nd</h2>
-                  <p> Runner</p>
-                  <div className={clashDisplay.className}>N500 000</div>
+                <div className="rewards__card bronze-medal">
+                  <Image src={BronzMedal} width={130} alt="3rd runner up" />
+                  <div>
+                    {" "}
+                    <h2 className={clashDisplay.className}>3rd</h2>
+                    <p>Runner</p>
+                    <div className={clashDisplay.className}>N500 000</div>
+                  </div>
                 </div>
               </div>
-              <div className="rewards__card gold-medal">
-                <Image src={GoldMedal} width={320} alt="1st runner up" />
-                <div>
-                  {" "}
-                  <h2 className={clashDisplay.className}>1st</h2>
-                  <p>Runner</p>
-                  <div className={clashDisplay.className}>N500 000</div>
-                </div>
+            </>
+          }
+          dir="ltr"
+          media={
+            <>
+              <div className="relative">
+                <Image src={img} alt="rules and guidelines" />
               </div>
-
-              <div className="rewards__card bronze-medal">
-                <Image src={BronzMedal} width={130} alt="3rd runner up" />
-                <div>
-                  {" "}
-                  <h2 className={clashDisplay.className}>3rd</h2>
-                  <p>Runner</p>
-                  <div className={clashDisplay.className}>N500 000</div>
-                </div>
-              </div>
-            </div>
-          </>
-        }
-        dir="ltr"
-        media={
-          <>
-            <div className="relative">
-              <Image src={img} alt="rules and guidelines" />
-            </div>
-          </>
-        }
-      />
+            </>
+          }
+        />
+      </div>
     </section>
   );
 };

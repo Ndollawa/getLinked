@@ -20,7 +20,7 @@ const Nav = () => {
     };
 
     const sections = document.querySelectorAll("section");
-    const menuLinks = document.querySelectorAll("nav .nav__menu li a");
+    const menuLinks = document.querySelectorAll(".nav__menu ul li a");
 
     const handleSectionScroll = () => {
       const top = window.scrollY;
@@ -34,7 +34,7 @@ const Nav = () => {
           menuLinks?.forEach((link) => {
             link.classList.remove("active");
             document
-              .querySelector("header .nav__menu li a[href*=" + id + "]")
+              .querySelector(".nav__menu ul li a[href*=" + id + "]")
               ?.classList.add("active");
           });
         }
@@ -52,9 +52,11 @@ const Nav = () => {
       <header className={`header ${isSticky ? "sticky" : null} `}>
         <nav className="nav container">
           <div className="nav__logo">
-            <h3 className={clashDisplay.className}>
-              get<span>linked</span>
-            </h3>
+            <Link href="/">
+              <h3 className={clashDisplay.className}>
+                get<span>linked</span>
+              </h3>
+            </Link>
           </div>
           <div className={`nav__menu ${toggleMenu ? " show" : null}`}>
             <div className="nav__menu--close">
@@ -87,9 +89,9 @@ const Nav = () => {
                 </Link>
               </li>
             </ul>
-            <div className="nav__menu--cta">
-              <Link href={"./register"}>Register</Link>
-            </div>
+            <Link className="nav__menu--cta" href={"./register"}>
+              Register
+            </Link>
           </div>
           <div className="nav__mobile--toogler">
             <svg

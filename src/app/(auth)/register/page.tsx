@@ -1,20 +1,46 @@
+"use client";
+
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import ScrollReveal from "scrollreveal";
 import {} from "@/containers";
 import "./Register.css";
 import { clashDisplay } from "@/utils/fonts/fonts";
-import { Reg, Register as cover } from "@/utils/images/images";
+import {
+  Reg,
+  RegistrationStars,
+  Register as cover,
+} from "@/utils/images/images";
 
 export default function Register() {
   const createrange = (n: number) => Array.from({ length: n }, (_, i) => i + 1);
   const groupNoOptions = createrange(12);
+  useEffect(() => {
+    ScrollReveal({
+      reset: true,
+      distance: "80px",
+      duration: 2000,
+      delay: 200,
+    });
 
+    ScrollReveal().reveal("", { origin: "bottom" });
+    ScrollReveal().reveal(".registration__box .registration__box--details", {
+      origin: "left",
+    });
+    ScrollReveal().reveal(".registration__box .registration__box--form", {
+      origin: "right",
+    });
+  }, []);
   return (
     <>
-      <main className="main">
-        <section className="registration">
+      <main className="main h-[100vh] overflow-hidden">
+        <section className="registration relative">
           <div className="flare--one"></div>
           <div className="flare--two"></div>
+          <div className="faq-stars -z-2 animate-pulse absolute w-full">
+            <Image src={RegistrationStars} alt="reg-stars" />
+          </div>
           <div className="registration__box">
             <div className="registration__box--details">
               <div className="details">

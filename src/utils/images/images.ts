@@ -34,8 +34,16 @@ import FaqStars from "@/assets/images/faq-stars.png";
 import PrivacyStars from "@/assets/images/privacy-stars.png";
 import FooterStars from "@/assets/images/footer-stars.png";
 import HeroImage from "@/assets/images/hero-image.png";
+import ContactStars from "@/assets/images/contact-stars.png";
+import SuccessStars from "@/assets/images/success-stars.png";
+import RegistrationStars from "@/assets/images/registration-stars.png";
+import RewardsStars from "@/assets/images/rewards-stars.png";
 
 export {
+  RewardsStars,
+  ContactStars,
+  SuccessStars,
+  RegistrationStars,
   HeroImage,
   HeroImageOverlay,
   LensFlare,

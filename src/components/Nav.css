@@ -62,10 +62,10 @@ header.sticky {
   @apply flex items-center md:justify-center capitalize font-semibold;
 }
 .nav__menu--list__item a.active {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color];
+  @apply bg-clip-text text-transparent font-extrabold bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color];
 }
 .nav__menu--list__item:has(a.active) {
-  @apply border-none md:border-[--secondary-color] md:border-b-2;
+  @apply md:border-[--secondary-color] md:border-b-2;
 }
 .nav__menu--cta {
   @apply m-5 md:flex rounded text-white bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] px-4 py-2 w-36 flex items-center justify-center;

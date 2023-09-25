@@ -23,7 +23,7 @@ that's what we're all about!"
           media={
             <>
               <div className="circle-gradient"></div>
-              <div className="star--one">
+              <div className="animate-pulse">
                 {" "}
                 <Image src={StarPurple} width={25} alt="star" />
               </div>

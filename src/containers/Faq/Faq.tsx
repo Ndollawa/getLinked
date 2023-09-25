@@ -52,7 +52,7 @@ specific technologies or APIs, and any other competition-specific requirements.`
   ));
   return (
     <section className="faq relative min-h-[100vh]" id="faqs">
-      <div className="faq-stars -z-2 absolute w-full">
+      <div className="faq-stars -z-2 animate-pulse absolute w-full">
         <Image src={FaqStars} alt="faq-stars" />
       </div>
       <div className="flare--one"></div>

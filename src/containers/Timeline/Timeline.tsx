@@ -48,7 +48,7 @@ this day`,
   ];
 
   const events = eventTimelines.map((e, i) => (
-    <div className="timeline__box--contents" key={(i = 1)}>
+    <div className="timeline__box--contents container" key={(i = 1)}>
       <div className="content">
         <h3 className={clashDisplay.className}>{e.title}</h3>
         <p>{e.content} </p>

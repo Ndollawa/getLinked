@@ -9,15 +9,17 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__box">
-        <div className="faq-stars -z-2 star--two absolute w-full">
+        <div className="faq-stars -z-2 animate-pulse absolute w-full">
           <Image src={FooterStars} alt="faq-stars" />
         </div>
         <div className="cols-span-12 md:cols-span-6">
           <div>
             <div className="footer__logo">
-              <h3 className={clashDisplay.className}>
-                get<span>linked</span>
-              </h3>
+              <Link href="/">
+                <h3 className={clashDisplay.className}>
+                  get<span>linked</span>
+                </h3>
+              </Link>
             </div>
             <p className="text-base mb-12">
               Getlinked Tech Hackathon is a technology innovation program
@@ -38,17 +40,17 @@ const Footer = () => {
           <div className="">
             <h3 className="secondary-text-color font-semibold">Useful Links</h3>
             <ul>
-              <li className="mb-2">
-                <a href="">Overview</a>
+              <li className="mb-2 hover:text-[--secondary-color]">
+                <a href="#about">Overview</a>
               </li>
-              <li className="mb-2">
-                <a href="">Timeline</a>
+              <li className="mb-2 hover:text-[--secondary-color]">
+                <a href="#timeline">Timeline</a>
               </li>
-              <li className="mb-2">
-                <a href="">FAQ</a>
+              <li className="mb-2 hover:text-[--secondary-color]">
+                <a href="#faqs">FAQs</a>
               </li>
-              <li className="mb-2">
-                <a href="">Register</a>
+              <li className="mb-2 hover:text-[--secondary-color]">
+                <a href="/register">Register</a>
               </li>
               <li className="mb-2 flex tems-center">
                 <span className="font-semibold secondary-text-color">

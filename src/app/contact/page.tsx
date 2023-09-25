@@ -1,29 +1,80 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect } from "react";
+import ScrollReveal from "scrollreveal";
+import { TypeAnimation } from "react-type-animation";
 import {} from "@/containers";
 import "./Contact.css";
 import { clashDisplay } from "@/utils/fonts/fonts";
 import Link from "next/link";
+import { ContactStars } from "@/utils/images/images";
 
 export default function Contact() {
+  useEffect(() => {
+    ScrollReveal({
+      reset: true,
+      distance: "80px",
+      duration: 2000,
+      delay: 200,
+    });
+
+    ScrollReveal().reveal(",social__links .social__icons", {
+      origin: "bottom",
+    });
+    ScrollReveal().reveal(
+      ".social__links h3,.contact__box--details, .details h2",
+      {
+        origin: "left",
+      }
+    );
+    ScrollReveal().reveal(".contact__box--form, .details p ", {
+      origin: "right",
+    });
+  }, []);
   return (
     <>
-      <main className="main">
-        <section className="contact">
+      <main className="main h-[100vh] overflow-hidden">
+        <section className="contact relative">
           <div className="flare--one"></div>
           <div className="flare--two"></div>
+          <div className="faq-stars -z-2 animate-pulse absolute w-full">
+            <Image src={ContactStars} alt="contact-stars" />
+          </div>
           <div className="contact__box">
             <div className="contact__box--details">
               <div className="details">
                 <h2 className={clashDisplay.className}>Get in touch</h2>
                 <p className="contact-info">Contact Information</p>
                 <p className="contact-address">
-                  27,Alara Street Yaba 100012 Lagos State
+                  {" "}
+                  <TypeAnimation
+                    sequence={[
+                      // Same substring at the start will only be typed out once, initially
+                      `27, Alara Street Yaba 100012 Lagos State`,
+                      1000,
+                    ]}
+                    wrapper="span"
+                    speed={50}
+                    style={{ fontSize: ".8remm", display: "inline-block" }}
+                    repeat={Infinity}
+                  />
                 </p>
-                <p className="">
+                <p className="hover:text-gray-500">
                   <a href="tel:07067981819">Call Us : 07067981819</a>
                 </p>
                 <p className="">
-                  we are open from Monday-Friday 08:00am - 05:00pm
+                  <TypeAnimation
+                    sequence={[
+                      // Same substring at the start will only be typed out once, initially
+                      `we are open from Monday-Friday 08:00am - 05:00pm`,
+                      2000,
+                    ]}
+                    wrapper="span"
+                    speed={50}
+                    style={{ fontSize: ".8remm", display: "inline-block" }}
+                    repeat={Infinity}
+                  />
                 </p>
               </div>
               <div className="social__links">

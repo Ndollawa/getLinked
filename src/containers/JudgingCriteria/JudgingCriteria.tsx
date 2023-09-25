@@ -54,41 +54,43 @@ specific technologies or APIs, and any other competition-specific requirements.`
     >
       <div className="flare--one"></div>
       <div className="flare--two"></div>{" "}
-      <SectionDescription
-        title="Rules and"
-        subTitle="Guidelines"
-        content={
-          <>
-            {judgingCriteria}
-            <div className="w-full flex flex-col items-center md:justify-start justify-center">
-              <button className="my-5 md:self-start text-sm px-4 py-2 cta-btn">
-                Read More
-              </button>
-            </div>
-          </>
-        }
-        dir="ltr"
-        media={
-          <>
-            {" "}
-            <div className="relative w-[720px]">
+      <div className="container w-full">
+        <SectionDescription
+          title="Rules and"
+          subTitle="Guidelines"
+          content={
+            <>
+              {judgingCriteria}
+              <div className="w-full flex flex-col items-center md:justify-start justify-center">
+                <button className="my-5 md:self-start text-sm px-4 py-2 cta-btn">
+                  Read More
+                </button>
+              </div>
+            </>
+          }
+          dir="ltr"
+          media={
+            <>
               {" "}
-              <div className="star--one">
+              <div className="relative w-[720px]">
                 {" "}
-                <Image src={StarPurple} width={25} alt="star" />
+                <div className="star--one">
+                  {" "}
+                  <Image src={StarPurple} width={25} alt="star" />
+                </div>
+                <div className="star--two">
+                  <Image src={Star} width={25} alt="star" />
+                </div>
+                <div className="star--three">
+                  <Image src={Star} width={25} alt="star" />
+                </div>
+                <div className="circle-gradient"></div>
+                <Image src={img} alt="rules and guidelines" />
               </div>
-              <div className="star--two">
-                <Image src={Star} width={25} alt="star" />
-              </div>
-              <div className="star--three">
-                <Image src={Star} width={25} alt="star" />
-              </div>
-              <div className="circle-gradient"></div>
-              <Image src={img} alt="rules and guidelines" />
-            </div>
-          </>
-        }
-      />
+            </>
+          }
+        />
+      </div>
     </section>
   );
 };

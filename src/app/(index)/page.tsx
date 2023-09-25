@@ -1,7 +1,7 @@
-// "use client";
+"use client";
 
 import Image from "next/image";
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import {
   HeroSection,
   AboutSection,
@@ -14,31 +14,40 @@ import {
   PartnersSection,
 } from "@/containers";
 import { Footer } from "@/components";
-// import ScrollReveal from "scrollreveal";
+import ScrollReveal from "scrollreveal";
 
 export default function Home() {
-  // useEffect(() => {
-  //   ScrollReveal({
-  //     reset: true,
-  //     distance: "80px",
-  //     duration: 2000,
-  //     delay: 200,
-  //   });
+  useEffect(() => {
+    ScrollReveal({
+      reset: true,
+      distance: "80px",
+      duration: 2000,
+      delay: 200,
+    });
 
-  //   ScrollReveal().reveal(".hero__container--intro, .heading", {
-  //     origin: "top",
-  //   });
-  //   ScrollReveal().reveal(
-  //     ".hero__container--image, .service__container,.project_container,.blog__container,.contact__container",
-  //     { origin: "bottom" }
-  //   );
-  //   ScrollReveal().reveal(".hero__container--intro h1, .about__image", {
-  //     origin: "left",
-  //   });
-  //   ScrollReveal().reveal(".hero__container--intro p, .about__content", {
-  //     origin: "right",
-  //   });
-  // }, []);
+    ScrollReveal().reveal(
+      ".hero__content--intro,.timeline .timeline__box--contents .bullet,.partners .partners__heading,.rules .content__wrapper--media, .hero__content--intro__box--heading h1",
+      {
+        origin: "top",
+      }
+    );
+    ScrollReveal().reveal(
+      ".hero__content--images,.partners .partners__box, .about .content__wrapper--contentbox,.faq .content__wrapper--contentbox,.rewards .content__wrapper--contentbox,.privacy .content__wrapper--contentbox,.criteria .content__wrapper--contentbox,.footer__box",
+      { origin: "bottom" }
+    );
+    ScrollReveal().reveal(
+      ".hero__content--timer,.timeline .timeline__box--contents .content, .about .content__wrapper--media,.rewards .content__wrapper--media,.privacy .content__wrapper--media,.criteria .content__wrapper--media",
+      {
+        origin: "left",
+      }
+    );
+    ScrollReveal().reveal(
+      ".hero__content--intro p,.timeline timeline__box--contents .dates,.rules .content__wrapper--contentbox,.faq .content__wrapper--media, .about__content",
+      {
+        origin: "right",
+      }
+    );
+  }, []);
   return (
     <>
       <main className="main">

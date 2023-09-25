@@ -18,7 +18,7 @@
   @apply w-full flex items-center justify-center md:justify-end container;
 }
 .hero__heading h2 {
-  @apply text-base md:text-xl lg:text-2xl my-5 italic relative md:tracking-widest font-semibold;
+  @apply z-[2] text-base md:text-xl lg:text-2xl my-5 italic relative md:tracking-widest font-semibold;
 }
 .hero__heading h2 span svg {
   @apply w-28 md:w-40 lg:w-52 hover:fill-blue-500 absolute right-0 -bottom-4;
