@@ -14,15 +14,14 @@ import {
   PartnersSection,
 } from "@/containers";
 import { Footer } from "@/components";
-import ScrollReveal from "scrollreveal";
 
 export default function Home() {
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const shouldInitializeScrollReveal = true;
-
-      if (shouldInitializeScrollReveal) {
-        ScrollReveal({
+   async function animate() {
+      if (refToComponent.current) {
+        const ScrollReveal = (await import("scrollreveal")).default
+       // sr().reveal(refToComponent.current)
+  ScrollReveal({
           reset: true,
           distance: "80px",
           duration: 2000,
@@ -53,6 +52,11 @@ export default function Home() {
         );
       }
     }
+
+      }
+    }
+    animate()
+      
   }, []);
   return (
     <>
