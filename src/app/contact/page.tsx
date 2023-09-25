@@ -8,7 +8,6 @@ import React, {
   FormEventHandler,
   ChangeEvent,
 } from "react";
-import ScrollReveal from "scrollreveal";
 import { TypeAnimation } from "react-type-animation";
 import {} from "@/containers";
 import "./Contact.css";
@@ -18,10 +17,10 @@ import { ContactStars } from "@/utils/images/images";
 
 export default function Contact() {
   useEffect(() => {
+async function animate() {
     if (typeof window !== "undefined") {
-      const shouldInitializeScrollReveal = true;
-
-      if (shouldInitializeScrollReveal) {
+        const ScrollReveal = (await import("scrollreveal")).default
+     
         ScrollReveal({
           reset: true,
           distance: "80px",
@@ -43,6 +42,7 @@ export default function Contact() {
         });
       }
     }
+animate();
   }, []);
 
   const [formData, setFormData] = useState({
