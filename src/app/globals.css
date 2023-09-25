@@ -22,7 +22,9 @@
 body {
   color: rgb(var(--foreground-rgb));
   font-size: 14px;
-  /* overflow: hidden; */
+  width: 100vw;
+  height: 100%;
+  overflow: auto;
   /* background: ; */
 }
 
@@ -31,9 +33,6 @@ body,
 div,
 section {
   width: 100%;
-}
-main {
-  overflow: hidden;
 }
 @layer base {
   *,

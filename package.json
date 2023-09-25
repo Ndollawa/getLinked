@@ -22,10 +22,10 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
     "react-spinners": "^0.13.8",
+    "react-type-animation": "^3.1.0",
     "scrollreveal": "^4.0.9",
     "sharp": "^0.32.6",
     "tailwindcss": "3.3.3",
-    "typed": "^10.0.0-beta.2",
     "typescript": "5.2.2"
   },
   "engines": {

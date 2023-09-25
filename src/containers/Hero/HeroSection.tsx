@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
-// import Typed from "typed";
+import { TypeAnimation } from "react-type-animation";
 import "./Hero.css";
 import { clashDisplay, unicaOne } from "@/utils/fonts/fonts";
 import { Montserrat } from "next/font/google";
@@ -69,15 +71,18 @@ const HeroSection = () => {
               />
             </div>
             <p>
-              {/* <Typed
-                strings={[
+              <TypeAnimation
+                sequence={[
+                  // Same substring at the start will only be typed out once, initially
                   `Participate in getlinked tech Hackathon 2023 stand a chance to win
               a Big prize`,
+                  1000,
                 ]}
-                typeSpeed={40}
-                backSpeed={10}
-                loop
-              /> */}
+                wrapper="span"
+                speed={50}
+                style={{ fontSize: "2em", display: "inline-block" }}
+                repeat={Infinity}
+              />
             </p>
             <button>Register</button>
           </div>
