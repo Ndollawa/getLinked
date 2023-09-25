@@ -54,8 +54,8 @@ export default function Home() {
       }
     }
 
-      }
-    }
+    
+ 
     animate()
       
   }, []);
