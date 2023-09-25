@@ -16,9 +16,13 @@ import {
   Blast,
   Star,
 } from "@/utils/images/images";
+import CountDownTimer from "@/components/CountDownTimer";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const HeroSection = () => {
+  const currentDate = new Date();
+  const targetDate = new Date(currentDate);
+  targetDate.setDate(currentDate.getDate() + 7);
   return (
     <section className="hero" id="home">
       <div className="container w-full">
@@ -37,7 +41,7 @@ const HeroSection = () => {
                 <path
                   d="M1 14.043C43.3333 5.7097 154.4 -5.95697 254 14.043"
                   stroke="#FF26B9"
-                  stroke-width="5"
+                  strokeWidth="5"
                 />
               </svg>
             </span>
@@ -87,17 +91,7 @@ const HeroSection = () => {
               </p>
               <button>Register</button>
             </div>
-            <div className="hero__content--timer">
-              <span className={unicaOne.className}>
-                00<sub className={montserrat.className}>H</sub>
-              </span>
-              <span className={unicaOne.className}>
-                00<sub className={montserrat.className}>M</sub>
-              </span>
-              <span className={unicaOne.className}>
-                00<sub className={montserrat.className}>S</sub>
-              </span>
-            </div>
+            <CountDownTimer targetDate={targetDate} />
           </div>
           <div className="hero__content--images">
             <Image

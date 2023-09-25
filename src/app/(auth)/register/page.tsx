@@ -1,6 +1,12 @@
 "use client";
 
-import { useEffect } from "react";
+import React, {
+  useState,
+  FormEvent,
+  useEffect,
+  FormEventHandler,
+  ChangeEvent,
+} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "scrollreveal";
@@ -12,6 +18,15 @@ import {
   RegistrationStars,
   Register as cover,
 } from "@/utils/images/images";
+import { config } from "@/utils/config/config";
+
+async function getCategories() {
+  const res = await fetch(config.baseURL + "/hackathon/categories-list", {
+    next: { tags: ["categories"], revalidate: 3600 },
+  });
+  const data = await res.json();
+  return data;
+}
 
 export default function Register() {
   const createrange = (n: number) => Array.from({ length: n }, (_, i) => i + 1);
@@ -32,6 +47,22 @@ export default function Register() {
       origin: "right",
     });
   }, []);
+  // console.log(await getCategories());
+  const [formData, setFormData] = useState({
+    team: "",
+    description: "",
+    body: "",
+    status: "",
+    category: "",
+    tags: "",
+  });
+
+  const handleInput: FormEventHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
   return (
     <>
       <main className="main h-[100vh] overflow-hidden">
@@ -60,7 +91,7 @@ export default function Register() {
                       <label htmlFor="">{"Team's Name"}</label>
                       <input
                         type="text"
-                        name="name"
+                        name="team"
                         placeholder="Enter the name of your group"
                       />
                     </div>

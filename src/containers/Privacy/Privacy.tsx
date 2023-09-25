@@ -59,7 +59,7 @@ const PrivacySection = () => {
                           <path
                             d="M5 8L7 10.5L13.5 6"
                             stroke="white"
-                            stroke-width="2"
+                            strokeWidth="2"
                           />
                         </svg>
                         <p>
@@ -80,7 +80,7 @@ const PrivacySection = () => {
                           <path
                             d="M5 8L7 10.5L13.5 6"
                             stroke="white"
-                            stroke-width="2"
+                            strokeWidth="2"
                           />
                         </svg>
                         <p>

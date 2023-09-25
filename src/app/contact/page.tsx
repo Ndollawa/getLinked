@@ -1,7 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
+import React, {
+  useState,
+  FormEvent,
+  useEffect,
+  FormEventHandler,
+  ChangeEvent,
+} from "react";
 import ScrollReveal from "scrollreveal";
 import { TypeAnimation } from "react-type-animation";
 import {} from "@/containers";
@@ -32,6 +38,22 @@ export default function Contact() {
       origin: "right",
     });
   }, []);
+
+  const [formData, setFormData] = useState({
+    team: "",
+    description: "",
+    body: "",
+    status: "",
+    category: "",
+    tags: "",
+  });
+
+  const handleInput: FormEventHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
   return (
     <>
       <main className="main h-[100vh] overflow-hidden">
