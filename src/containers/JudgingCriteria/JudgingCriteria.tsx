@@ -48,7 +48,10 @@ specific technologies or APIs, and any other competition-specific requirements.`
     <DataDescription key={i} title={c.title} content={c.content} />
   ));
   return (
-    <section className="judging-criteria relative h-[100vh]">
+    <section
+      className="judging-criteria relative lg:min-h-[100vh]"
+      id="criteria"
+    >
       <div className="flare--one"></div>
       <div className="flare--two"></div>{" "}
       <SectionDescription

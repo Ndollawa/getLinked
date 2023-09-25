@@ -1,5 +1,5 @@
 .about {
-  @apply py-20;
+  @apply py-20 md:min-h-[50vh];
 }
 .about .star--one {
   @apply absolute  md:left-44 md:top-44;

@@ -31,14 +31,14 @@
 } */
 
 .border-t {
-  @apply border-[--secondary-color] border-t-2;
+  @apply border-[--secondary-color] border-t-2 h-24;
 }
 .border-r {
-  @apply border-[--secondary-color] border-r-2;
+  @apply border-[--secondary-color] border-r-2 h-24;
 }
 .border-b {
-  @apply border-[--secondary-color] border-b-2;
+  @apply border-[--secondary-color] border-b-2 h-24;
 }
 .border-l {
-  @apply border-[--secondary-color] border-l-2;
+  @apply border-[--secondary-color] border-l-2 h-24;
 }

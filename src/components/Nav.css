@@ -1,6 +1,12 @@
 header {
   @apply w-full h-20 bg-[--primary-color] text-white;
 }
+header.sticky {
+  box-shadow: 01.023rem 0.56 rgba(0, 0, 0, 0.4);
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.1);
+  z-index: 9999;
+  @apply fixed top-0 left-0 bg-[--primary-color];
+}
 .nav {
   @apply flex items-center relative h-full justify-between container;
 }
@@ -13,9 +19,36 @@ header {
 .nav__logo h3 span {
   @apply text-[--secondary-color];
 }
+
 .nav__menu {
-  @apply hidden w-72 shadow-md md:shadow-none z-[9999] md:z-0 md:w-[80%] absolute p-4 top-24 md:top-0 md:right-0 right-2 bg-[--primary-color] md:bg-none md:relative md:flex md:items-center md:justify-between;
+  @apply w-72 shadow-md md:shadow-none z-[9999] md:z-0 md:w-[70%] absolute hidden  top-24 md:top-0 md:right-0 right-2  bg-[--primary-color] md:bg-none md:relative md:flex md:items-center md:justify-between;
+  /* position: fixed;
+  transform-origin: right center;
+  z-index: 999;
+  transform: translateX(-100%);
+  transform-origin: left center;
+  transition: transform 0.5s ease 0.5s, visibility 0.5s ease 0.5s;
+  visibility: hidden; */
 }
+@media screen and (max-width: 32rem) {
+  .nav__menu.show {
+    @apply block;
+    /* opacity: 1;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    visibility: visible;
+    -webkit-transition: visibility 0.5s ease 0ms,
+      -webkit-transform 0.5s ease 0ms;
+    transition: visibility 0.5s ease 0ms, -webkit-transform 0.5s ease 0ms;
+    transition: transform 0.5s ease 0ms, visibility 0.5s ease 0ms;
+    transition: transform 0.5s ease 0ms, visibility 0.5s ease 0ms,
+      -webkit-transform 0.5s ease 0ms; */
+  }
+  .nav__menu.show ~ .nav__mobile--overlay {
+    @apply absolute top-0 left-0 right-0 bottom-0 bg-[#000] opacity-50 cursor-pointer w-full h-full m-0;
+  }
+}
+
 .nav__menu--close {
   @apply text-white text-2xl flex w-full mr-10 mt-2 justify-end md:hidden;
 }
@@ -23,7 +56,7 @@ header {
   @apply block md:flex md:items-center md:justify-between lg:justify-around md:gap-2 lg:gap-4;
 }
 .nav__menu--list__item {
-  @apply block px-6 py-3 md:px-3 md:py-1.5 lg:px-6 lg:py-3 md:flex items-center  md:justify-center;
+  @apply block md:flex items-center px-6 py-3 md:px-3 md:py-1.5 lg:px-4 lg:py-2 md:justify-center;
 }
 .nav__menu--list__item a {
   @apply flex items-center md:justify-center capitalize font-semibold;
@@ -32,7 +65,7 @@ header {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color];
 }
 .nav__menu--list__item:has(a.active) {
-  @apply border-[--secondary-color] border-b-2;
+  @apply border-none md:border-[--secondary-color] md:border-b-2;
 }
 .nav__menu--cta {
   @apply m-5 md:flex rounded text-white bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] px-4 py-2 w-36 flex items-center justify-center;

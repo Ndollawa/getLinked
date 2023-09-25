@@ -7,46 +7,52 @@ import "./Faq.css";
 import FaqAccordion from "./FaqAccordion";
 
 const FaqSection = () => {
-  const criteria = [
+  const faqs = [
     {
-      title: "Innovation and Creativity:",
-      content: `Evaluate the uniqueness and creativity of the
+      question: "Can I work on a project I started before the hackathon?",
+      answer: `Evaluate the uniqueness and creativity of the
 solution. Consider whether it addresses a real-world problem in a novel 
 way or introduces innovative features.`,
     },
     {
-      title: "Functionality: ",
-      content: `Assess how well the solution works. Does it perform its 
+      question: "What happens if I need help during the hackathon?",
+      answer: `Assess how well the solution works. Does it perform its 
 intended functions effectively and without major issues? Judges would
 consider the completeness and robustness of the solution.`,
     },
     {
-      title: "Impact and Relevance: ",
-      content: `Determine the potential impact of the solution 
+      question: "What happens if I don't have an idea for a project",
+      answer: `Determine the potential impact of the solution 
 in the real world. Does it address a significant problem, and is it relevant 
 to the target audience? Judges would assess the potential social, 
 economic, or environmental benefits.`,
     },
     {
-      title: "Technical Complexity: ",
-      content: `Evaluate the technical sophistication of the solution. 
+      question: "Can I join a team or do I have to come with one?",
+      answer: `Evaluate the technical sophistication of the solution. 
 Judges would consider the complexity of the code, the use of advanced 
 technologies or algorithms, and the scalability of the solution.`,
     },
     {
-      title: "Adherence to Hackathon Rules: ",
-      content: `Judges will Ensure that the team adhered 
+      question: "What happens after the hackathon ends",
+      answer: `Judges will Ensure that the team adhered 
+to the rules and guidelines of the hackathon, including deadlines, use of 
+specific technologies or APIs, and any other competition-specific requirements.`,
+    },
+    {
+      question: "Can I work on a project I started before the hackathon?",
+      answer: `Judges will Ensure that the team adhered 
 to the rules and guidelines of the hackathon, including deadlines, use of 
 specific technologies or APIs, and any other competition-specific requirements.`,
     },
   ];
 
-  const judgingCriteria = criteria.map((c, i) => (
-    <DataDescription key={i} title={c.title} content={c.content} />
+  const faqsData = faqs.map((f, i) => (
+    <FaqAccordion key={i} question={f.question} answer={f.answer} />
   ));
   return (
-    <section className="faq relative h-[100vh]">
-      <div className="faq-stars -z-2 star--two absolute w-full">
+    <section className="faq relative min-h-[100vh]" id="faqs">
+      <div className="faq-stars -z-2 absolute w-full">
         <Image src={FaqStars} alt="faq-stars" />
       </div>
       <div className="flare--one"></div>
@@ -60,24 +66,7 @@ want to ask about getlinked Hackathon 1.0"
           <>
             <div className="z-[2] mx-auto my-5 px-5">
               <div className="grid divide-y divide-neutral-200 max-w-xl mx-auto mt-8">
-                <FaqAccordion
-                  question="What is a SAAS platform?"
-                  answer="
-                SAAS platform is a cloud-based software service that allows
-                users to access and use a variety of tools and functionality."
-                />
-                <FaqAccordion
-                  question="What is a SAAS platform?"
-                  answer="
-                SAAS platform is a cloud-based software service that allows
-                users to access and use a variety of tools and functionality."
-                />
-                <FaqAccordion
-                  question="What is a SAAS platform?"
-                  answer="
-                SAAS platform is a cloud-based software service that allows
-                users to access and use a variety of tools and functionality."
-                />
+                {faqsData}
               </div>
             </div>
           </>

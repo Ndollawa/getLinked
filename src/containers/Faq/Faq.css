@@ -1,9 +1,9 @@
 .faq .question--one {
-  @apply absolute animate-bounce  left-28 top-8;
+  @apply absolute animate-bounce max-md:w-6 left-16 top-5 md:left-16 md:top-9 lg:left-28 lg:top-8;
 }
 .faq .question--two {
-  @apply absolute animate-bounce  left-48 -top-12;
+  @apply absolute animate-bounce max-md:w-8 left-28 -top-5 md:left-28 md:-top-8 lg:left-48 lg:-top-12;
 }
 .faq .question--three {
-  @apply absolute  animate-bounce left-72 top-8;
+  @apply absolute  animate-bounce max-md:w-6 left-40 top-5 md:left-44 md:top-9 lg:left-72 lg:top-8;
 }

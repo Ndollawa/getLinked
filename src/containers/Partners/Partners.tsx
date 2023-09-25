@@ -18,7 +18,7 @@ import { clashDisplay } from "@/utils/fonts/fonts";
 
 const PartnersSection = () => {
   return (
-    <section className="partners">
+    <section className="partners" id="partners">
       <div className="partners__heading">
         <h1 className={clashDisplay.className}>Partners and Sponsors</h1>
         <p className="">
@@ -29,24 +29,24 @@ const PartnersSection = () => {
       <div className="partners__box">
         <div className="relative">
           <div className="absolute place-self-center ">
-            <Image src={Lines} width={520} className="" />
+            {/* <Image src={Lines} width={520} className="" /> */}
           </div>
-          <div className="">
+          <div className="border-b">
             <Image src={Libertylogo2} height={55} alt="" />
           </div>
-          <div className="">
+          <div className="border-l">
             <Image src={Libertylogo} height={70} alt="" />
           </div>
-          <div className="">
+          <div className="border-l">
             <Image src={Winwise} height={70} alt="" />
           </div>
-          <div className="">
+          <div className="border-r">
             <Image src={Wisper} height={55} alt="" />
           </div>
-          <div className="">
+          <div className="border-t">
             <Image src={Paybox} height={70} alt="" />
           </div>
-          <div className="pl-5">
+          <div className="border-l border-t">
             <Image src={VizualPlus} height={70} alt="" />
           </div>
         </div>

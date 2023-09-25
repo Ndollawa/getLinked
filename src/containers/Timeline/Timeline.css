@@ -39,7 +39,7 @@
   @apply grid grid-cols-3 w-11/12 md:w-9/12 justify-center items-center;
 } */
 .timeline__box div.timeline__box--contents .content {
-  @apply w-full col-span-4;
+  @apply w-full md:col-span-4;
 }
 .timeline__box div.timeline__box--contents .content h3 {
   @apply text-[--secondary-color] text-xl font-semibold md:text-right;

@@ -52,7 +52,7 @@ specific technologies or APIs, and any other competition-specific requirements.`
     <DataDescription key={i} title={c.title} content={c.content} />
   ));
   return (
-    <section className="rewards relative h-[100vh]" id="rewards">
+    <section className="rewards relative lg:min-h-[100vh]" id="rewards">
       <div className="flare--one"></div>
       <div className="flare--two"></div>
       <Image src={StarPurple} className="star--one" alt="star" />

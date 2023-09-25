@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+// import Typed from "typed";
 import "./Hero.css";
 import { clashDisplay, unicaOne } from "@/utils/fonts/fonts";
 import { Montserrat } from "next/font/google";
@@ -17,7 +18,7 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 
 const HeroSection = () => {
   return (
-    <section className="hero">
+    <section className="hero" id="home">
       <div className="hero__heading">
         <h2 className="">
           Igniting a Revolution in{" "}
@@ -68,8 +69,15 @@ const HeroSection = () => {
               />
             </div>
             <p>
-              Participate in getlinked tech Hackathon 2023 stand a chance to win
-              a Big prize
+              {/* <Typed
+                strings={[
+                  `Participate in getlinked tech Hackathon 2023 stand a chance to win
+              a Big prize`,
+                ]}
+                typeSpeed={40}
+                backSpeed={10}
+                loop
+              /> */}
             </p>
             <button>Register</button>
           </div>

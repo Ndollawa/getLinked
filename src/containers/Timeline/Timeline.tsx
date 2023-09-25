@@ -63,7 +63,7 @@ this day`,
     </div>
   ));
   return (
-    <section className="timeline relative h-[100vh]">
+    <section className="timeline relative lg:min-h-[100vh]" id="timeline">
       <div className="flare--one"></div>
       <div className="flare--two"></div>
       <div className="timeline__heading">

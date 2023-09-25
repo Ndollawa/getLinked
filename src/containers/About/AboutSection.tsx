@@ -6,7 +6,7 @@ import "./About.css";
 
 const AboutSection = () => {
   return (
-    <section className="about m-6 relative">
+    <section className="about m-6 relative" id="overview">
       <div className="star--one">
         {" "}
         <Image src={StarPurple} width={25} alt="star" />

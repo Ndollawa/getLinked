@@ -2,6 +2,9 @@
   @apply rounded text-white bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] px-4 py-2 w-36 flex items-center justify-center;
 }
 
+.judging-criteria {
+  @apply md:min-h-[50vh];
+}
 .judging-criteria .circle-gradient {
   @apply hidden md:block w-32 h-32 z-[-1] rounded-full bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] absolute left-20 -top-8;
 }

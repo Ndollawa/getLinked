@@ -8,7 +8,7 @@ import "./Privacy.css";
 
 const PrivacySection = () => {
   return (
-    <section className="privacy relative h-[100vh]">
+    <section className="privacy relative min-h-[100vh]" id="privacy">
       <div className="flare--one"></div>
       <div className="flare--two"></div>
       <div className="faq-stars -z-2 absolute w-full">
