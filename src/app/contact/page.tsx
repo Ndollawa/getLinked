@@ -18,34 +18,38 @@ import { ContactStars } from "@/utils/images/images";
 
 export default function Contact() {
   useEffect(() => {
-    ScrollReveal({
-      reset: true,
-      distance: "80px",
-      duration: 2000,
-      delay: 200,
-    });
+    if (typeof window !== "undefined") {
+      const shouldInitializeScrollReveal = true;
 
-    ScrollReveal().reveal(",social__links .social__icons", {
-      origin: "bottom",
-    });
-    ScrollReveal().reveal(
-      ".social__links h3,.contact__box--details, .details h2",
-      {
-        origin: "left",
+      if (shouldInitializeScrollReveal) {
+        ScrollReveal({
+          reset: true,
+          distance: "80px",
+          duration: 2000,
+          delay: 200,
+        });
+
+        ScrollReveal().reveal(".social__links .social__icons", {
+          origin: "bottom",
+        });
+        ScrollReveal().reveal(
+          ".social__links h3,.contact__box--details, .details h2",
+          {
+            origin: "left",
+          }
+        );
+        ScrollReveal().reveal(".contact__box--form, .details p ", {
+          origin: "right",
+        });
       }
-    );
-    ScrollReveal().reveal(".contact__box--form, .details p ", {
-      origin: "right",
-    });
+    }
   }, []);
 
   const [formData, setFormData] = useState({
-    team: "",
-    description: "",
-    body: "",
-    status: "",
-    category: "",
-    tags: "",
+    phone_number: "",
+    email: "",
+    first_name: "",
+    message: "",
   });
 
   const handleInput: FormEventHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -53,6 +57,10 @@ export default function Contact() {
       ...prev,
       [e.target.name]: e.target.value,
     }));
+  };
+
+  const handleSubmit: FormEventHandler = (e: FormEvent) => {
+    e.preventDefault();
   };
   return (
     <>
@@ -175,24 +183,29 @@ export default function Contact() {
                 <h3 className={clashDisplay.className}>
                   Questions or need assistance? Let us know about it!
                 </h3>
-                <form action="">
+                <form action="" onSubmit={handleSubmit}>
                   <div className="form__group">
                     <label htmlFor=""></label>
-                    <input type="text" placeholder="Team Name" />
+                    <input
+                      type="text"
+                      name="first_name"
+                      placeholder="Team Name"
+                    />
                   </div>
                   <div className="form__group">
                     <label htmlFor=""></label>
-                    <input type="text" placeholder="Subject" />
+                    <input type="text" name="subject" placeholder="Subject" />
                   </div>
                   <div className="form__group">
                     <label htmlFor=""></label>
-                    <input type="text" placeholder="Email" />
+                    <input type="email" name="email" placeholder="Email" />
                   </div>
                   <div className="form__group">
                     <label htmlFor=""></label>
                     <textarea
                       className="p-4 mb-4"
                       rows={4}
+                      name="message"
                       placeholder="Message"
                     />
                   </div>

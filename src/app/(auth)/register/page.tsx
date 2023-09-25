@@ -19,6 +19,7 @@ import {
   Register as cover,
 } from "@/utils/images/images";
 import { config } from "@/utils/config/config";
+import Success from "@/components/Success";
 
 async function getCategories() {
   const res = await fetch(config.baseURL + "/hackathon/categories-list", {
@@ -32,29 +33,38 @@ export default function Register() {
   const createrange = (n: number) => Array.from({ length: n }, (_, i) => i + 1);
   const groupNoOptions = createrange(12);
   useEffect(() => {
-    ScrollReveal({
-      reset: true,
-      distance: "80px",
-      duration: 2000,
-      delay: 200,
-    });
+    if (typeof window !== "undefined") {
+      const shouldInitializeScrollReveal = true;
+      if (shouldInitializeScrollReveal) {
+        ScrollReveal({
+          reset: true,
+          distance: "80px",
+          duration: 2000,
+          delay: 200,
+        });
 
-    ScrollReveal().reveal("", { origin: "bottom" });
-    ScrollReveal().reveal(".registration__box .registration__box--details", {
-      origin: "left",
-    });
-    ScrollReveal().reveal(".registration__box .registration__box--form", {
-      origin: "right",
-    });
+        ScrollReveal().reveal("", { origin: "bottom" });
+        ScrollReveal().reveal(
+          ".registration__box .registration__box--details",
+          {
+            origin: "left",
+          }
+        );
+        ScrollReveal().reveal(".registration__box .registration__box--form", {
+          origin: "right",
+        });
+      }
+    }
   }, []);
   // console.log(await getCategories());
   const [formData, setFormData] = useState({
-    team: "",
-    description: "",
-    body: "",
-    status: "",
+    email: "",
+    phone_number: "",
+    team_name: "",
+    group_size: 0,
+    project_topic: null,
     category: "",
-    tags: "",
+    privacy_poclicy_accepted: false,
   });
 
   const handleInput: FormEventHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -63,8 +73,13 @@ export default function Register() {
       [e.target.name]: e.target.value,
     }));
   };
+
+  const handleSubmit: FormEventHandler = (e: FormEvent) => {
+    e.preventDefault();
+  };
   return (
     <>
+      <Success />
       <main className="main h-[100vh] overflow-hidden">
         <section className="registration relative">
           <div className="flare--one"></div>
@@ -85,13 +100,13 @@ export default function Register() {
                   Be a part of this movement <Image src={Reg} alt="" />
                 </p>
                 <h3>Create Your Account</h3>
-                <form action="form">
+                <form action="form" onSubmit={handleSubmit}>
                   <div className="form__box">
                     <div className="form__group">
                       <label htmlFor="">{"Team's Name"}</label>
                       <input
                         type="text"
-                        name="team"
+                        name="team_name"
                         placeholder="Enter the name of your group"
                       />
                     </div>
@@ -99,7 +114,7 @@ export default function Register() {
                       <label htmlFor="">Phone</label>
                       <input
                         type="text"
-                        name="phone"
+                        name="phone_number"
                         placeholder="Enter your phone number"
                       />
                     </div>
@@ -116,7 +131,7 @@ export default function Register() {
                       <label htmlFor="">Project Topic</label>
                       <input
                         type="text"
-                        name="topic"
+                        name="project_topic"
                         placeholder="Enter your group project topic"
                       />
                     </div>
@@ -131,7 +146,7 @@ export default function Register() {
                     </div>
                     <div className="form__group">
                       <label htmlFor="">Group Size</label>
-                      <select name="groupNo" id="groupNo">
+                      <select name="group_size" id="groupNo">
                         {groupNoOptions.map((n, i) => (
                           <option key={i} value={n}>
                             {n}
