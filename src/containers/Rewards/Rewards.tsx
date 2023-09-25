@@ -11,7 +11,7 @@ import {
 import DataDescription from "@/components/DataDescription";
 import "./Reward.css";
 import { clashDisplay } from "@/utils/fonts/fonts";
-import { Star, StarPurple } from "@/utils/icons/icons";
+import { Star, StarPurple } from "@/utils/images/images";
 
 const RewardsSection = () => {
   const criteria = [
