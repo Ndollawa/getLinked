@@ -8,30 +8,59 @@
   @apply text-center text-2xl font-semibold;
 }
 .timeline__heading p {
-  @apply text-base md:w-[24rem] text-center self-center;
+  @apply text-base text-center self-center;
 }
 .timeline__box {
-  @apply grid w-11/12 md:w-9/12  place-self-center  place-items-center;
+  @apply grid  place-self-center  place-items-center;
 }
 /*  */
 .timeline__box > div.timeline__box--contents {
-  @apply grid grid-cols-2 md:grid-cols-3 w-11/12 md:w-9/12 justify-center items-center;
+  @apply grid mb-5 grid-cols-12 lg:w-11/12  justify-center items-center;
+}
+.timeline__box > div.timeline__box--contents:nth-child(even) .content h3 {
+  @apply text-left;
+}
+.timeline__box > div.timeline__box--contents:nth-child(even) .content p {
+  @apply text-left;
+}
+.timeline__box > div.timeline__box--contents:nth-child(even) .content {
+  @apply order-3;
+}
+.timeline__box > div.timeline__box--contents:nth-child(even) .date {
+  @apply order-1 justify-start;
+}
+.timeline__box > div.timeline__box--contents:nth-child(even) .date h3 {
+  @apply text-left self-end;
+}
+.timeline__box > div.timeline__box--contents:nth-child(even) .bullet {
+  @apply order-2;
 }
 /* .timeline__box > div >.content {
   @apply grid grid-cols-3 w-11/12 md:w-9/12 justify-center items-center;
 } */
-.timeline__box > div > div .content h3 {
-  @apply text-[--secondary-color] font-semibold md:text-right;
+.timeline__box div.timeline__box--contents .content {
+  @apply w-full col-span-4;
 }
-.timeline__box > div > div .content p {
-  @apply text-white md:text-right;
+.timeline__box div.timeline__box--contents .content h3 {
+  @apply text-[--secondary-color] text-xl font-semibold md:text-right;
 }
-.timeline__box > div.timeline__box--contents > .bullet {
-  @apply grid grid-cols-1 relative w-full justify-center items-center;
+.timeline__box div.timeline__box--contents .content p {
+  @apply text-white md:text-right text-sm;
 }
-.timeline__box > div.timeline__box--contents > div.bullet:nth-child(1) {
-  @apply w-60 h-10 bg-[--secondary-color];
+.timeline__box div.timeline__box--contents .bullet {
+  @apply grid grid-cols-1 place-items-center w-full col-span-4;
 }
-/* .timeline__box > div.timeline__box--contents > div.bullet:nth-child(2) {
+.timeline__box > div.timeline__box--contents > div.bullet .line {
+  content: "";
+  @apply w-1 h-20 mb-2 bg-[--secondary-color];
+}
+.timeline__box > div.timeline__box--contents > div.bullet .gradient-circle {
   @apply w-12 h-12 flex items-center justify-center text-xl font-semibold rounded-full bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] left-24 top-40;
-} */
+}
+
+.timeline__box > div.timeline__box--contents > div.date {
+  @apply flex flex-col h-full w-full col-span-4 relative;
+}
+.timeline__box > div.timeline__box--contents > div.date h3 {
+  @apply text-[--secondary-color] absolute bottom-5 text-xl font-semibold;
+}

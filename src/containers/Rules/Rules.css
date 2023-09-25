@@ -8,7 +8,7 @@
   content: "";
   width: 40rem;
   height: 40rem;
-  z-index: 0;
+  z-index: -1;
   position: absolute;
   bottom: 15px;
   left: 30px;

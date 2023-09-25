@@ -1,6 +1,16 @@
 .rewards .question--one {
   @apply absolute  left-28 top-8;
 }
+.reward .star--one {
+  @apply absolute w-3 md:w-5 left-2 top-4 md:left-10 lg:left-24 hover:animate-none md:top-2 lg:top-5;
+}
+.reward .star--two {
+  @apply absolute w-3 md:w-5 right-5 top-40 md:right-2 hover:animate-none md:top-10 opacity-60;
+}
+.reward .star--three {
+  @apply absolute w-3 md:w-5 hover:animate-none right-8 bottom-0 md:right-16  md:bottom-40 opacity-70;
+}
+
 .rewards .question--two {
   @apply absolute  left-48 -top-12;
 }

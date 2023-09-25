@@ -12,7 +12,7 @@
     rgba(144, 58, 255, 0.6) 0%,
     transparent 50%
   );
-  @apply md:left-[40px] md:-top-16 lg:-top-32 md:w-[20rem] lg:w-[40rem] md:h-[20rem] lg:h-[40rem] z-0 absolute opacity-70;
+  @apply z-[-1] md:left-[40px] md:-top-16 lg:-top-32 md:w-[20rem] lg:w-[40rem] md:h-[20rem] lg:h-[40rem] z-0 absolute opacity-70;
 }
 .hero__heading {
   @apply w-full flex items-center justify-center md:justify-end container;

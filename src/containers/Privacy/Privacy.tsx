@@ -11,7 +11,7 @@ const PrivacySection = () => {
     <section className="privacy relative h-[100vh]">
       <div className="flare--one"></div>
       <div className="flare--two"></div>
-      <div className="faq-stars -z-2 star--two absolute w-full">
+      <div className="faq-stars -z-2 absolute w-full">
         <Image src={PrivacyStars} alt="faq-stars" />
       </div>
       <SectionDescription
