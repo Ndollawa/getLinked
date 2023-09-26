@@ -35,7 +35,10 @@ section {
   width: 100%;
 }
 section {
-  overflow-x: hidden;
+  overflow: hidden;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
 }
 @layer base {
   *,
