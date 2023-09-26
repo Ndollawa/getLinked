@@ -23,7 +23,6 @@ import { config } from "@/utils/config/config";
 const fetcher = (...args: any) => fetch(...args).then((res) => res.json());
 const url = config.baseURL + "/hackathon/contact-form";
 
-const [success, setSuccess] = useState(false);
 async function sendMessage(url: string, { arg }: { arg: string }) {
   await fetch(url, {
     method: "POST",
@@ -39,6 +38,7 @@ export default function Contact() {
     error: formError,
   } = useSWRMutation(url, sendMessage /* options */);
 
+const [success, setSuccess] = useState(false);
   useEffect(() => {
     async function animate() {
       if (typeof window !== "undefined") {
