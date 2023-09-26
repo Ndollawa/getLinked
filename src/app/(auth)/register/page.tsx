@@ -130,7 +130,7 @@ export default function Register() {
         theme: "colored",
       });
     }
-    const result = await trigger(formData);
+    const result = await trigger(formData as any);
     if (formError) {
       return toast.error("Opps! An error occured", {
         position: "top-right",

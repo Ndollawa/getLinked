@@ -95,7 +95,7 @@ export default function Contact() {
   const handleSubmit: FormEventHandler = async (e: FormEvent) => {
     e.preventDefault();
     console.log(formData);
-    const result = await trigger(formData);
+    const result = await trigger(formData as any);
     if (!formError) setSuccess(true);
     setFormData(formParams);
     toast.success("Successfull sent!", {
