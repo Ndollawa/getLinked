@@ -11,36 +11,45 @@
   @apply text-base text-center self-center;
 }
 .timeline__box {
-  @apply grid  place-self-center  place-items-center;
+  @apply grid grid-cols-1 place-self-center  place-items-center;
 }
 /*  */
+.timeline__box > div.timeline__box--contents .bullet {
+  @apply order-1;
+}
+.timeline__box > div.timeline__box--contents .content {
+  @apply order-2;
+}
+.timeline__box > div.timeline__box--contents .date {
+  @apply order-3;
+}
 .timeline__box > div.timeline__box--contents {
-  @apply grid mb-5 grid-cols-12 lg:w-11/12  justify-center items-center;
+  @apply flex flex-wrap mb-5 w-full  justify-center items-center relative;
 }
 .timeline__box > div.timeline__box--contents:nth-child(even) .content h3 {
-  @apply text-left;
+  @apply md:text-left;
 }
 .timeline__box > div.timeline__box--contents:nth-child(even) .content p {
-  @apply text-left;
+  @apply md:text-left;
 }
 .timeline__box > div.timeline__box--contents:nth-child(even) .content {
-  @apply order-2 md:order-3;
+  @apply md:order-3;
 }
 .timeline__box > div.timeline__box--contents:nth-child(even) .date {
-  @apply order-3 md:order-1 justify-start;
+  @apply md:order-1 md:justify-start;
 }
 .timeline__box > div.timeline__box--contents:nth-child(even) .date h3 {
-  @apply text-left self-end;
+  @apply text-left md:self-end;
 }
 .timeline__box > div.timeline__box--contents:nth-child(even) .bullet {
-  @apply order-1 md:order-2;
+  @apply md:order-2;
 }
-/* .timeline__box > div >.content {
-  @apply grid grid-cols-3 w-11/12 md:w-9/12 justify-center items-center;
+.timeline__box > div > .content {
+  @apply grid w-10/12 md:w-5/12 justify-center items-center max-md:-top-8 relative;
+}
+/* .timeline__box div.timeline__box--contents .content {
+  @apply w-full;
 } */
-.timeline__box div.timeline__box--contents .content {
-  @apply w-full md:col-span-4;
-}
 .timeline__box div.timeline__box--contents .content h3 {
   @apply text-[--secondary-color] text-xl font-semibold md:text-right;
 }
@@ -48,7 +57,7 @@
   @apply text-white md:text-right text-sm;
 }
 .timeline__box div.timeline__box--contents .bullet {
-  @apply grid grid-cols-1 place-items-center w-full col-span-4;
+  @apply grid  place-items-center w-2/12;
 }
 .timeline__box > div.timeline__box--contents > div.bullet .line {
   content: "";
@@ -59,7 +68,7 @@
 }
 
 .timeline__box > div.timeline__box--contents > div.date {
-  @apply flex flex-col h-full w-full col-span-4 relative;
+  @apply flex flex-col w-8/12 max-md:col-start-4 md:w-5/12 relative mt-8;
 }
 .timeline__box > div.timeline__box--contents > div.date h3 {
   @apply text-[--secondary-color] absolute bottom-5 text-xl font-semibold;

@@ -20,7 +20,7 @@ import Link from "next/link";
 import { ContactStars } from "@/utils/images/images";
 import { config } from "@/utils/config/config";
 
-const fetcher = (...args: any) => fetch(...args).then((res) => res.json());
+const fetcher = (...args: any) => fetch(args).then((res) => res.json());
 const url = config.baseURL + "/hackathon/contact-form";
 
 async function sendMessage(url: string, { arg }: { arg: string }) {
@@ -39,7 +39,7 @@ export default function Contact() {
     error: formError,
   } = useSWRMutation(url, sendMessage /* options */);
 
-const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState(false);
   useEffect(() => {
     async function animate() {
       if (typeof window !== "undefined") {
@@ -68,11 +68,6 @@ const [success, setSuccess] = useState(false);
     }
     animate();
   }, []);
-  const { data, error, isLoading } = useSWR(
-    config.baseURL + "/hackathon/categories-list",
-    fetcher
-  );
-
   const formParams = {
     phone_number: undefined,
     email: undefined,
@@ -87,10 +82,12 @@ const [success, setSuccess] = useState(false);
       ...prev,
       [e.target.name]: e.target.value,
     }));
+    console.log(formData);
   };
 
   const handleSubmit: FormEventHandler = async (e: FormEvent) => {
     e.preventDefault();
+    console.log(formData);
     const result = await trigger(formData);
     if (!formError) setSuccess(true);
     setFormData(formParams);
@@ -253,6 +250,17 @@ const [success, setSuccess] = useState(false);
                       name="email"
                       onChange={handleInput}
                       placeholder="Email"
+                    />
+                  </div>
+                  <div className="form__group">
+                    <label htmlFor=""></label>
+                    <input
+                      type="tel"
+                      name="phone_number"
+                      min={11}
+                      max={14}
+                      onChange={handleInput}
+                      placeholder="Phone number"
                     />
                   </div>
                   <div className="form__group">

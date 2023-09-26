@@ -26,10 +26,10 @@ header.sticky {
 @media screen and (max-width: 32rem) {
   .nav__menu {
     position: fixed;
-    transform-origin: right center;
-    z-index: 999;
-    transform: translateX(-100%);
     transform-origin: left center;
+    z-index: 999;
+    transform: translateX(100%);
+    transform-origin: right center;
     transition: transform 0.5s ease 0.5s, visibility 0.5s ease 0.5s;
     visibility: hidden;
   }
@@ -75,5 +75,5 @@ header.sticky {
 }
 
 .nav__mobile--toogler {
-  @apply md:hidden m-5 w-10 text-4xl text-white font-semibold hover:cursor-pointer;
+  @apply md:hidden m-5 w-10 text-4xl select-none text-white font-semibold hover:cursor-pointer;
 }

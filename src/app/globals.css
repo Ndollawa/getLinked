@@ -54,7 +54,7 @@ main {
     color: #fff;
   }
   section {
-    @apply bg-primary  pt-[3rem] px-[2%] md:pt-[5rem] md:px-[7%] md:border-b-2 md:border-[rgba(128,128,128,0.36)];
+    @apply bg-primary  pt-[3rem] px-[4%] md:pt-[5rem] md:px-[6%] md:border-b-2 md:border-[rgba(128,128,128,0.36)];
   }
   .center {
     @apply grid grid-cols-1 items-center;

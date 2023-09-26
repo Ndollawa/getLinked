@@ -7,7 +7,7 @@ import { clashDisplay } from "@/utils/fonts/fonts";
 import "./Nav.css";
 
 const Nav = () => {
-  const [toggleMenu, setToggleMenu] = useState(true);
+  const [toggleMenu, setToggleMenu] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   useEffect(() => {
     const handleScroll = () => {

@@ -1,5 +1,5 @@
 .content__wrapper {
-  @apply m-auto flex flex-wrap min-h-[50vh] z-[1] gap-5 md:gap-0;
+  @apply m-auto flex flex-wrap min-h-[fit-content] z-[1] gap-5 md:gap-0;
 }
 .content__wrapper--media {
   @apply w-full md:w-6/12 z-[1] grid grid-cols-1 place-items-center;

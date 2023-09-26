@@ -120,7 +120,20 @@ export default function Register() {
       });
     }
     const result = await trigger(formData);
-    if (!formError) setSuccess(true);
+    if (formError) {
+      return toast.error("Opps! An error occured", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
+
+    setSuccess(true);
     setFormData(formParams);
   };
   return (

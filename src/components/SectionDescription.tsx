@@ -47,7 +47,7 @@ const SectionDescription = ({
             <div className="text-base text-white z-[1]">{description}</div>
           )}
         </div>
-        <div className="text-white text-base  z-[1] md:text-justify lg:text-left text-center">
+        <div className="text-white text-base  z-[1] md:text-left text-center">
           {content}
         </div>
       </div>

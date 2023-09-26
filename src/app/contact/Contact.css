@@ -9,20 +9,20 @@ main {
 }
 
 .contact__box {
-  @apply grid md:grid-cols-2 grid-cols-1 items-center justify-center container z-[1] relative;
+  @apply flex flex-wrap items-center justify-center container z-[1] relative;
 }
 .contact__box--details {
-  @apply grid grid-cols-1 items-center justify-center w-8/12 m-auto  z-[1];
+  @apply grid grid-cols-1 w-full md:w-4/12 lg:w-6/12 items-center justify-center m-auto  z-[1];
 }
 
 .contact__box--details .details {
-  @apply w-72 hidden md:block;
+  @apply w-72 hidden md:block break-words;
 }
 .contact__box--details .details h2 {
   @apply mb-4 font-semibold secondary-text-color text-2xl md:text-3xl;
 }
 .contact__box--details .details p {
-  @apply mb-4 text-sm sm:text-base;
+  @apply mb-4 text-sm sm:text-base break-words md:w-[16rem] lg:w-auto;
 }
 .contact__box--details .details p.contact-info,
 .contact__box--details .details p.contact-address {
@@ -41,7 +41,7 @@ main {
 }
 
 .contact__box--form {
-  @apply grid grid-cols-1 items-center justify-center;
+  @apply grid grid-cols-1 md:w-8/12 lg:w-6/12 items-center justify-center;
 }
 .contact__form > form .form__group select option {
   -webkit-appearance: none;
@@ -52,7 +52,7 @@ main {
 .contact__box--form .contact__form {
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  @apply grid grid-cols-1 items-center md:bg-[#ffffff08] justify-center md:w-10/12 min-h-[20rem] md:p-16;
+  @apply grid grid-cols-1 items-center md:bg-[#ffffff08] justify-center w-full md:w-11/12 min-h-[20rem] md:p-8 lg:p-16;
 }
 
 .contact__form > h3 {
