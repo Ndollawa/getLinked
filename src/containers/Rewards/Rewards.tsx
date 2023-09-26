@@ -53,7 +53,7 @@ specific technologies or APIs, and any other competition-specific requirements.`
     <DataDescription key={i} title={c.title} content={c.content} />
   ));
   return (
-    <section className="rewards relative lg:min-h-[100vh]" id="rewards">
+    <section className="rewards relative lg:min-h-[100vh] w-full" id="rewards">
       <div className="faq-stars -z-2 animate-pulse absolute w-full">
         <Image src={RewardsStars} alt="faq-stars" />
       </div>

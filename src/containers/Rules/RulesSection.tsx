@@ -6,7 +6,7 @@ import "./Rules.css";
 
 const RulesSection = () => {
   return (
-    <section className="rules m-6 relative" id="rules">
+    <section className="rules m-6 relative w-full overflow-auto" id="rules">
       <div className="flare--one"></div>
       <div className="flare--two"></div>
       <div className="container center h-full">

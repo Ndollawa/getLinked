@@ -1,5 +1,5 @@
 .privacy {
-  @apply lg:min-h-[100vh];
+  @apply lg:min-h-[100vh] w-full;
 }
 .privacy .ds {
   @apply mx-4 sm:mx-8 md:mx-16;

@@ -31,7 +31,7 @@ async function registerUser(url: string, { arg }: { arg: string }) {
   await fetch(url, {
     method: "POST",
     headers: {
-      Application: `application/json`,
+      "Content-Type": "application/json",
     },
   });
 }
@@ -102,7 +102,6 @@ export default function Register() {
             : false
           : e.target.value,
     }));
-    console.log(canSave);
   };
 
   const handleSubmit: FormEventHandler = async (e: FormEvent) => {
@@ -119,7 +118,7 @@ export default function Register() {
         theme: "colored",
       });
     }
-    const result = await trigger(formData);
+    const result = await trigger(JSON.stringify(formData));
     if (!formError) setSuccess(true);
     setFormData(formParams);
   };
@@ -235,7 +234,7 @@ export default function Register() {
                     <button
                       type="submit"
                       className="cta-btn"
-                      disabled={!canSave || isMutating}
+                      disabled={isMutating}
                     >
                       {!isMutating ? (
                         "Register Now"

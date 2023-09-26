@@ -21,7 +21,7 @@ header.sticky {
 }
 
 .nav__menu {
-  @apply w-72 shadow-md md:shadow-none z-[9999] md:z-0 md:w-[70%] absolute hidden  top-24 md:top-0 md:right-0 right-2  bg-[--primary-color] md:bg-none md:relative md:flex md:items-center md:justify-between;
+  @apply w-72 shadow-md md:shadow-none z-[9999] md:z-0 md:w-[70%] absolute hidden  top-20 md:top-0 md:right-0 right-2  bg-[--primary-color] md:bg-none md:relative md:flex md:items-center md:justify-between;
   /* position: fixed;
   transform-origin: right center;
   z-index: 999;
@@ -50,7 +50,7 @@ header.sticky {
 }
 
 .nav__menu--close {
-  @apply text-white text-2xl flex w-full mr-10 mt-2 justify-end md:hidden;
+  @apply text-white text-2xl flex w-full mr-24 mt-2 justify-end md:hidden;
 }
 .nav__menu--list {
   @apply block md:flex md:items-center md:justify-between lg:justify-around md:gap-2 lg:gap-4;

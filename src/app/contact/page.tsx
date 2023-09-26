@@ -28,7 +28,7 @@ async function sendMessage(url: string, { arg }: { arg: string }) {
   await fetch(url, {
     method: "POST",
     headers: {
-      Application: `application/json`,
+      "Content-Type": "application/json",
     },
   });
 }
@@ -90,7 +90,7 @@ export default function Contact() {
 
   const handleSubmit: FormEventHandler = async (e: FormEvent) => {
     e.preventDefault();
-    const result = await trigger(formData);
+    const result = await trigger(JSON.stringify(formData));
     if (!formError) setSuccess(true);
     setFormData(formParams);
     toast.success("Successfull sent!", {

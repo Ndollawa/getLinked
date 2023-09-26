@@ -3,7 +3,7 @@
 }
 
 .judging-criteria {
-  @apply md:min-h-[50vh];
+  @apply md:min-h-[50vh] w-full;
 }
 .judging-criteria .circle-gradient {
   @apply hidden md:block w-32 h-32 z-[-1] rounded-full bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] absolute left-20 -top-8;
