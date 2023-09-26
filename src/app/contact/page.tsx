@@ -10,6 +10,7 @@ import React, {
 } from "react";
 import { TypeAnimation } from "react-type-animation";
 import useSWR from "swr";
+import useSWRMutation from "swr/mutation";
 import { toast } from "react-toastify";
 import Toastify from "@/components/Toastify";
 import {} from "@/containers";
@@ -20,8 +21,22 @@ import { ContactStars } from "@/utils/images/images";
 import { config } from "@/utils/config/config";
 
 const fetcher = (...args: any) => fetch(...args).then((res) => res.json());
-
+const url = config.baseURL + "/hackathon/contact-form";
+async function sendMessage(url: string, { arg }: { arg: string }) {
+  await fetch(url, {
+    method: "POST",
+    headers: {
+      Application: `application/json`,
+    },
+  });
+}
 export default function Contact() {
+  const {
+    trigger,
+    isMutating,
+    error: formError,
+  } = useSWRMutation(url, sendMessage /* options */);
+
   useEffect(() => {
     async function animate() {
       if (typeof window !== "undefined") {
@@ -70,7 +85,7 @@ export default function Contact() {
 
   const handleSubmit: FormEventHandler = (e: FormEvent) => {
     e.preventDefault();
-    toast.error("🦄 Wow so easy!", {
+    toast.success("Successfull sent!", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,

@@ -31,7 +31,7 @@ async function registerUser(url: string, { arg }: { arg: string }) {
   await fetch(url, {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${arg}`,
+      Application: `application/json`,
     },
   });
 }
