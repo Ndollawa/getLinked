@@ -17,12 +17,11 @@ import { Footer } from "@/components";
 
 export default function Home() {
   useEffect(() => {
-
-   async function animate() {
+    async function animate() {
       if (typeof window !== "undefined") {
-        const ScrollReveal = (await import("scrollreveal")).default
-       // sr().reveal(refToComponent.current)
-  ScrollReveal({
+        const ScrollReveal = (await import("scrollreveal")).default;
+        // sr().reveal(refToComponent.current)
+        ScrollReveal({
           reset: true,
           distance: "80px",
           duration: 2000,
@@ -54,10 +53,7 @@ export default function Home() {
       }
     }
 
-    
- 
-    animate()
-      
+    animate();
   }, []);
   return (
     <>

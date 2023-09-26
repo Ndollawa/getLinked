@@ -9,18 +9,24 @@ import React, {
   ChangeEvent,
 } from "react";
 import { TypeAnimation } from "react-type-animation";
+import useSWR from "swr";
+import { toast } from "react-toastify";
+import Toastify from "@/components/Toastify";
 import {} from "@/containers";
 import "./Contact.css";
 import { clashDisplay } from "@/utils/fonts/fonts";
 import Link from "next/link";
 import { ContactStars } from "@/utils/images/images";
+import { config } from "@/utils/config/config";
+
+const fetcher = (...args: any) => fetch(...args).then((res) => res.json());
 
 export default function Contact() {
   useEffect(() => {
-async function animate() {
-    if (typeof window !== "undefined") {
-        const ScrollReveal = (await import("scrollreveal")).default
-     
+    async function animate() {
+      if (typeof window !== "undefined") {
+        const ScrollReveal = (await import("scrollreveal")).default;
+
         ScrollReveal({
           reset: true,
           distance: "80px",
@@ -42,9 +48,12 @@ async function animate() {
         });
       }
     }
-animate();
+    animate();
   }, []);
-
+  const { data, error, isLoading } = useSWR(
+    config.baseURL + "/hackathon/categories-list",
+    fetcher
+  );
   const [formData, setFormData] = useState({
     phone_number: "",
     email: "",
@@ -61,9 +70,20 @@ animate();
 
   const handleSubmit: FormEventHandler = (e: FormEvent) => {
     e.preventDefault();
+    toast.error("🦄 Wow so easy!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
   };
   return (
     <>
+      <Toastify />
       <main className="main h-[100vh] overflow-hidden">
         <section className="contact relative">
           <div className="flare--one"></div>

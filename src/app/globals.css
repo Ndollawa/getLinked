@@ -34,6 +34,9 @@ div,
 section {
   width: 100%;
 }
+*:not(html, body) {
+  overflow: hidden;
+}
 @layer base {
   *,
   *::before,
@@ -174,7 +177,7 @@ section {
     @apply w-full lg:w-[1024px] m-auto;
   }
   .cta-btn {
-    @apply rounded text-white bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] px-4 py-2 w-36 flex items-center justify-center;
+    @apply rounded cursor-pointer hover:opacity-90 text-white bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] px-4 py-2 w-36 flex items-center justify-center;
   }
 
   .gradient-circle {

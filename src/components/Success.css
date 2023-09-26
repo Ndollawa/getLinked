@@ -1,24 +1,29 @@
 .success {
-  @apply text-white  grid grid-cols-1  place-items-center w-full h-[100vh] bg-[#1e1e1e86] z-[999999] absolute left-0 right-0 bottom-0 top-0;
+  @apply text-white  grid grid-cols-1  place-items-center w-full h-[100%] bg-[#54084fd5] z-[999999] absolute left-0 right-0 bottom-0 top-0;
 }
 .success .success__bg--overlay {
   border-radius: 5px;
   border: 1px solid #d434fe;
-  background: rgba(217, 217, 217, 0.03);
-  @apply z-2 flex flex-col w-11/12 md:w-9/12 lg:w-7/12 items-center justify-center;
+  background: rgba(0, 0, 0, 0.122);
+  @apply z-2 flex flex-col w-11/12 md:w-9/12 lg:w-7/12 items-center justify-center p-3 sm:p-6 md:p-12 lg:p-14;
 }
-.success .success__bg--overlay .success__messag--container .content img {
+
+.success .success__bg--overlay > .success__message--container,
+.success .success__bg--overlay > .success__message--container > .content {
+  @apply grid grid-cols-1 place-content-center place-items-center;
+}
+.success .success__bg--overlay .success__message--container > .content img {
   @apply w-72;
 }
-.success .success__bg--overlay .success__messag--container .content h2 {
-  @apply mb-4 text-center font-semibold text-3xl;
+.success .success__bg--overlay .success__message--container > .content h2 {
+  @apply mb-2 text-center font-semibold text-3xl;
 }
-.success .success__bg--overlay .success__messag--container .content h2 {
-  @apply mb-4 text-center font-semibold text-3xl;
+.success .success__bg--overlay .success__message--container > .content h3 {
+  @apply mb-1 text-center font-semibold text-2xl;
 }
-.success .success__bg--overlay .success__messag--container .content h3 {
-  @apply mb-4 text-center font-semibold text-2xl;
+.success .success__bg--overlay .success__message--container > .content p {
+  @apply mb-1 text-center;
 }
-.success .success__bg--overlay .success__messag--container .content p {
-  @apply mb-4 text-center;
+.success .success__bg--overlay .success__message--container > .content a {
+  @apply mb-4 text-center w-[80%];
 }

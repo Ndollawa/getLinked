@@ -9,6 +9,11 @@ import React, {
 } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import useSWR from "swr";
+import useSWRMutation from "swr/mutation";
+import { toast } from "react-toastify";
+import Toastify from "@/components/Toastify";
+import Swal from "sweetalert2";
 import {} from "@/containers";
 import "./Register.css";
 import { clashDisplay } from "@/utils/fonts/fonts";
@@ -19,24 +24,34 @@ import {
 } from "@/utils/images/images";
 import { config } from "@/utils/config/config";
 import Success from "@/components/Success";
+import { PulseLoader } from "react-spinners";
 
-async function getCategories() {
-  const res = await fetch(config.baseURL + "/hackathon/categories-list", {
-    next: { tags: ["categories"], revalidate: 3600 },
+const url = config.baseURL + "/hackathon/registration";
+async function registerUser(url: string, { arg }: { arg: string }) {
+  await fetch(url, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${arg}`,
+    },
   });
-  const data = await res.json();
-  return data;
 }
 
 export default function Register() {
   const createrange = (n: number) => Array.from({ length: n }, (_, i) => i + 1);
   const groupNoOptions = createrange(12);
+  const fetcher = (...args: any) => fetch(...args).then((res) => res.json());
+  const [success, setSuccess] = useState(false);
+  const {
+    trigger,
+    isMutating,
+    error: formError,
+  } = useSWRMutation(url, registerUser /* options */);
+
   useEffect(() => {
-async function animate() {
-     
-    if (typeof window !== "undefined") {
-        const ScrollReveal = (await import("scrollreveal")).default
-     
+    async function animate() {
+      if (typeof window !== "undefined") {
+        const ScrollReveal = (await import("scrollreveal")).default;
+
         ScrollReveal({
           reset: true,
           distance: "80px",
@@ -55,32 +70,58 @@ async function animate() {
           origin: "right",
         });
       }
-    }animate()
+    }
+    animate();
   }, []);
-  // console.log(await getCategories());
-  const [formData, setFormData] = useState({
-    email: "",
-    phone_number: "",
-    team_name: "",
-    group_size: 0,
-    project_topic: null,
-    category: "",
+  const {
+    data: categories,
+    error,
+    isLoading,
+  } = useSWR(config.baseURL + "/hackathon/categories-list", fetcher);
+  // console.log(data);
+
+  const formParams = {
+    email: undefined,
+    phone_number: undefined,
+    team_name: undefined,
+    group_size: 1,
+    project_topic: undefined,
+    category: undefined,
     privacy_poclicy_accepted: false,
-  });
+  };
+  const [formData, setFormData] = useState(formParams);
+  const canSave = Object.values(formData).every(Boolean); //&& !isLoading
 
   const handleInput: FormEventHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
+    console.log(canSave);
   };
 
-  const handleSubmit: FormEventHandler = (e: FormEvent) => {
+  const handleSubmit: FormEventHandler = async (e: FormEvent) => {
     e.preventDefault();
+    if (!formData.privacy_poclicy_accepted) {
+      return toast.error("You must agree to our terms and conditions", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
+    const result = await trigger(formData);
+    if (!formError) setSuccess(true);
+    setFormData(formParams);
   };
   return (
     <>
-      <Success />
+      <Toastify />
+      {success && <Success show={success} />}
       <main className="main h-[100vh] overflow-hidden">
         <section className="registration relative">
           <div className="flare--one"></div>
@@ -101,13 +142,14 @@ async function animate() {
                   Be a part of this movement <Image src={Reg} alt="" />
                 </p>
                 <h3>Create Your Account</h3>
-                <form action="form" onSubmit={handleSubmit}>
+                <form action="" method="POST" onSubmit={handleSubmit}>
                   <div className="form__box">
                     <div className="form__group">
                       <label htmlFor="">{"Team's Name"}</label>
                       <input
                         type="text"
                         name="team_name"
+                        onChange={handleInput}
                         placeholder="Enter the name of your group"
                       />
                     </div>
@@ -116,6 +158,7 @@ async function animate() {
                       <input
                         type="text"
                         name="phone_number"
+                        onChange={handleInput}
                         placeholder="Enter your phone number"
                       />
                     </div>
@@ -124,6 +167,7 @@ async function animate() {
                       <input
                         type="text"
                         name="email"
+                        onChange={handleInput}
                         placeholder="Enter your email address"
                       />
                     </div>
@@ -133,21 +177,31 @@ async function animate() {
                       <input
                         type="text"
                         name="project_topic"
+                        onChange={handleInput}
                         placeholder="Enter your group project topic"
                       />
                     </div>
                     <div className="form__group">
                       <label htmlFor="">Category</label>
-                      <select name="category" id="category">
-                        <option value={"Fintech"}>Fintech</option>
-                        <option value={"Education"}>Education</option>
-                        <option value={"Health"}>Health</option>
-                        <option value={"Government"}>Government</option>
+                      <select
+                        name="category"
+                        onChange={handleInput}
+                        id="category"
+                      >
+                        {categories?.map((c: { id: string; name: string }) => (
+                          <option key={c.id} value={c.id}>
+                            {c.name}
+                          </option>
+                        ))}{" "}
                       </select>
                     </div>
                     <div className="form__group">
                       <label htmlFor="">Group Size</label>
-                      <select name="group_size" id="groupNo">
+                      <select
+                        name="group_size"
+                        onChange={handleInput}
+                        id="groupNo"
+                      >
                         {groupNoOptions.map((n, i) => (
                           <option key={i} value={n}>
                             {n}
@@ -160,15 +214,32 @@ async function animate() {
                     Please review your registration details before submitting
                   </p>
                   <div className="confirmation">
-                    <input type="checkbox" name="confirmation" id="" />
+                    <input
+                      type="checkbox"
+                      onChange={handleInput}
+                      name="privacy_poclicy_accepted"
+                      value={"true"}
+                      id=""
+                    />
                     <p>
                       I agreed with the event terms and conditions and privacy
                       policy
                     </p>
                   </div>
                   <div className="grid grid-cols-1 place-items-center">
-                    <button type="submit" className="cta-btn">
-                      Register Now
+                    <button
+                      type="submit"
+                      className="cta-btn"
+                      disabled={!canSave || isMutating}
+                    >
+                      {!isMutating ? (
+                        "Register Now"
+                      ) : (
+                        <>
+                          Registering{" "}
+                          <PulseLoader size={"0.5rem"} color="#fff" />
+                        </>
+                      )}
                     </button>
                   </div>
                 </form>
