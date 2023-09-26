@@ -1,6 +1,3 @@
-main {
-  @apply overflow-hidden;
-}
 .contact {
   @apply h-[100vh] w-full text-white overflow-hidden relative;
 }

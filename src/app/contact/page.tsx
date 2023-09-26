@@ -20,7 +20,15 @@ import Link from "next/link";
 import { ContactStars } from "@/utils/images/images";
 import { config } from "@/utils/config/config";
 
-const fetcher = (...args: any[]) => fetch(...args).then((res) => res.json());
+const fetcher = async (...args: any[]) => {
+  const response = await (fetch as (...args: any[]) => Promise<Response>)(
+    ...args
+  );
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return response.json();
+};
 const url = config.baseURL + "/hackathon/contact-form";
 
 async function sendMessage(url: string, { arg }: { arg: string }) {
@@ -82,7 +90,6 @@ export default function Contact() {
       ...prev,
       [e.target.name]: e.target.value,
     }));
-    console.log(formData);
   };
 
   const handleSubmit: FormEventHandler = async (e: FormEvent) => {
@@ -105,7 +112,7 @@ export default function Contact() {
   return (
     <>
       <Toastify />
-      <main className="main h-[100vh] overflow-hidden">
+      <main className="main h-[100vh]">
         <section className="contact relative">
           <div className="flare--one"></div>
           <div className="flare--two"></div>

@@ -39,8 +39,19 @@ async function registerUser(url: string, { arg }: { arg: string }) {
 
 export default function Register() {
   const createrange = (n: number) => Array.from({ length: n }, (_, i) => i + 1);
+
   const groupNoOptions = createrange(12);
-  const fetcher = (...args: any[]) => fetch(...args).then((res) => res.json());
+
+  const fetcher = async (...args: any[]) => {
+    const response = await (fetch as (...args: any[]) => Promise<Response>)(
+      ...args
+    );
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  };
+
   const [success, setSuccess] = useState(false);
   const {
     trigger,
@@ -140,7 +151,7 @@ export default function Register() {
     <>
       <Toastify />
       {success && <Success show={success} />}
-      <main className="main h-[100vh] overflow-hidden">
+      <main className="main h-[100vh]">
         <section className="registration relative">
           <div className="flare--one"></div>
           <div className="flare--two"></div>
@@ -248,7 +259,7 @@ export default function Register() {
                     <button
                       type="submit"
                       className="cta-btn"
-                      disabled={isMutating}
+                      disabled={!canSave || isMutating}
                     >
                       {!isMutating ? (
                         "Register Now"
