@@ -50,7 +50,7 @@ header.sticky {
 }
 
 .nav__menu--close {
-  @apply text-white text-2xl flex w-full mr-24 mt-2 justify-end md:hidden;
+  @apply text-white text-2xl flex w-full relative mr-24 right-4 mt-2 justify-end md:hidden;
 }
 .nav__menu--list {
   @apply block md:flex md:items-center md:justify-between lg:justify-around md:gap-2 lg:gap-4;
