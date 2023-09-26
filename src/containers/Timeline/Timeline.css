@@ -15,13 +15,13 @@
 }
 /*  */
 .timeline__box > div.timeline__box--contents .bullet {
-  @apply order-1;
+  @apply max-md:order-1;
 }
 .timeline__box > div.timeline__box--contents .content {
-  @apply order-2;
+  @apply max-md:order-2;
 }
 .timeline__box > div.timeline__box--contents .date {
-  @apply order-3;
+  @apply max-md:order-3;
 }
 .timeline__box > div.timeline__box--contents {
   @apply flex flex-wrap mb-5 w-full  justify-center items-center relative;

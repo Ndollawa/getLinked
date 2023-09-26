@@ -40,7 +40,7 @@ async function registerUser(url: string, { arg }: { arg: string }) {
 export default function Register() {
   const createrange = (n: number) => Array.from({ length: n }, (_, i) => i + 1);
   const groupNoOptions = createrange(12);
-  const fetcher = (...args: any) => fetch(...args).then((res) => res.json());
+  const fetcher = (...args: any[]) => fetch(...args).then((res) => res.json());
   const [success, setSuccess] = useState(false);
   const {
     trigger,

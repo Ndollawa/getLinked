@@ -20,7 +20,7 @@ import Link from "next/link";
 import { ContactStars } from "@/utils/images/images";
 import { config } from "@/utils/config/config";
 
-const fetcher = (...args: any) => fetch(args).then((res) => res.json());
+const fetcher = (...args: any[]) => fetch(...args).then((res) => res.json());
 const url = config.baseURL + "/hackathon/contact-form";
 
 async function sendMessage(url: string, { arg }: { arg: string }) {
