@@ -26,6 +26,7 @@ const url = config.baseURL + "/hackathon/contact-form";
 async function sendMessage(url: string, { arg }: { arg: string }) {
   await fetch(url, {
     method: "POST",
+    body: JSON.stringify(arg),
     headers: {
       "Content-Type": "application/json",
     },
@@ -91,7 +92,7 @@ const [success, setSuccess] = useState(false);
 
   const handleSubmit: FormEventHandler = async (e: FormEvent) => {
     e.preventDefault();
-    const result = await trigger(JSON.stringify(formData));
+    const result = await trigger(formData);
     if (!formError) setSuccess(true);
     setFormData(formParams);
     toast.success("Successfull sent!", {

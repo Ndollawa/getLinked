@@ -30,6 +30,7 @@ const url = config.baseURL + "/hackathon/registration";
 async function registerUser(url: string, { arg }: { arg: string }) {
   await fetch(url, {
     method: "POST",
+    body: JSON.stringify(arg),
     headers: {
       "Content-Type": "application/json",
     },
@@ -118,7 +119,7 @@ export default function Register() {
         theme: "colored",
       });
     }
-    const result = await trigger(JSON.stringify(formData));
+    const result = await trigger(formData);
     if (!formError) setSuccess(true);
     setFormData(formParams);
   };
