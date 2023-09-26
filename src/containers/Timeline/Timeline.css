@@ -24,16 +24,16 @@
   @apply text-left;
 }
 .timeline__box > div.timeline__box--contents:nth-child(even) .content {
-  @apply order-3;
+  @apply order-2 md:order-3;
 }
 .timeline__box > div.timeline__box--contents:nth-child(even) .date {
-  @apply order-1 justify-start;
+  @apply order-3 md:order-1 justify-start;
 }
 .timeline__box > div.timeline__box--contents:nth-child(even) .date h3 {
   @apply text-left self-end;
 }
 .timeline__box > div.timeline__box--contents:nth-child(even) .bullet {
-  @apply order-2;
+  @apply order-1 md:order-2;
 }
 /* .timeline__box > div >.content {
   @apply grid grid-cols-3 w-11/12 md:w-9/12 justify-center items-center;

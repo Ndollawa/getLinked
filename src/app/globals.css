@@ -34,8 +34,8 @@ div,
 section {
   width: 100%;
 }
-*:not(html, body) {
-  overflow: hidden;
+section {
+  overflow-x: hidden;
 }
 @layer base {
   *,

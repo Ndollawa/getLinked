@@ -22,6 +22,8 @@ import { config } from "@/utils/config/config";
 
 const fetcher = (...args: any) => fetch(...args).then((res) => res.json());
 const url = config.baseURL + "/hackathon/contact-form";
+
+const [success, setSuccess] = useState(false);
 async function sendMessage(url: string, { arg }: { arg: string }) {
   await fetch(url, {
     method: "POST",
@@ -69,13 +71,16 @@ export default function Contact() {
     config.baseURL + "/hackathon/categories-list",
     fetcher
   );
-  const [formData, setFormData] = useState({
-    phone_number: "",
-    email: "",
-    first_name: "",
-    message: "",
-  });
 
+  const formParams = {
+    phone_number: undefined,
+    email: undefined,
+    first_name: undefined,
+    message: undefined,
+  };
+  const [formData, setFormData] = useState(formParams);
+
+  const canSave = Object.values(formData).every(Boolean); //&& !isLoading
   const handleInput: FormEventHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({
       ...prev,
@@ -83,8 +88,11 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit: FormEventHandler = (e: FormEvent) => {
+  const handleSubmit: FormEventHandler = async (e: FormEvent) => {
     e.preventDefault();
+    const result = await trigger(formData);
+    if (!formError) setSuccess(true);
+    setFormData(formParams);
     toast.success("Successfull sent!", {
       position: "top-right",
       autoClose: 5000,
@@ -224,16 +232,27 @@ export default function Contact() {
                     <input
                       type="text"
                       name="first_name"
+                      onChange={handleInput}
                       placeholder="Team Name"
                     />
                   </div>
                   <div className="form__group">
                     <label htmlFor=""></label>
-                    <input type="text" name="subject" placeholder="Subject" />
+                    <input
+                      type="text"
+                      name="subject"
+                      onChange={handleInput}
+                      placeholder="Subject"
+                    />
                   </div>
                   <div className="form__group">
                     <label htmlFor=""></label>
-                    <input type="email" name="email" placeholder="Email" />
+                    <input
+                      type="email"
+                      name="email"
+                      onChange={handleInput}
+                      placeholder="Email"
+                    />
                   </div>
                   <div className="form__group">
                     <label htmlFor=""></label>
@@ -241,11 +260,16 @@ export default function Contact() {
                       className="p-4 mb-4"
                       rows={4}
                       name="message"
+                      onChange={handleInput}
                       placeholder="Message"
                     />
                   </div>
                   <div className="grid grid-cols-1 place-items-center">
-                    <button type="submit" className="cta-btn">
+                    <button
+                      type="submit"
+                      disabled={!canSave || isMutating}
+                      className="cta-btn"
+                    >
                       Submit
                     </button>
                   </div>
