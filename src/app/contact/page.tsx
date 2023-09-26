@@ -37,6 +37,7 @@ export default function Contact() {
     isMutating,
     error: formError,
   } = useSWRMutation(url, sendMessage /* options */);
+  const [success, setSuccess] = useState(false);
 
 const [success, setSuccess] = useState(false);
   useEffect(() => {
