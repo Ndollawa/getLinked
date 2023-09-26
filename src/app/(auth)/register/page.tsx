@@ -95,7 +95,12 @@ export default function Register() {
   const handleInput: FormEventHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [e.target.name]:
+        e.target.name === "privacy_poclicy_accepted"
+          ? e.target.value === "true"
+            ? true
+            : false
+          : e.target.value,
     }));
     console.log(canSave);
   };
