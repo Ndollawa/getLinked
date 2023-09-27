@@ -35,7 +35,7 @@
   }
 }
 .rules .circle-gradient {
-  @apply w-32 h-32 z-0 rounded-full bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] absolute right-36 top-8 hidden md:block;
+  @apply md:w-24 md:h-24 lg:w-32 lg:h-32 z-0 rounded-full bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] absolute  md:right-[16%] md:top-[16%] lg:right-[28%] lg:top-[15%] hidden md:block;
 }
 
 .rules .star--one {

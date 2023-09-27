@@ -1,12 +1,12 @@
 .contact {
-  @apply h-[100vh] w-full text-white overflow-hidden relative;
+  @apply min-h-[100vh] overflow-x-hidden  w-full text-white relative;
 }
 .contact .flare--one {
   @apply -left-56 top-0;
 }
 
 .contact__box {
-  @apply flex flex-wrap items-center justify-center container z-[1] relative;
+  @apply flex flex-wrap items-center justify-center container z-[1];
 }
 .contact__box--details {
   @apply grid grid-cols-1 w-full md:w-4/12 lg:w-6/12 items-center justify-center m-auto  z-[1];
@@ -27,7 +27,7 @@
 }
 
 .contact__box--details .social__links {
-  @apply absolute -bottom-20 left-[40%] -right-[40%] justify-center md:relative md:bottom-auto md:right-auto md:left-auto;
+  @apply absolute flex flex-col md:block top-[35rem] left-[40%] -right-[40%] justify-center md:relative md:bottom-auto md:right-auto md:left-auto;
 }
 
 .contact__box--details .social__links > h3 {
@@ -49,7 +49,7 @@
 .contact__box--form .contact__form {
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  @apply grid grid-cols-1 items-center md:bg-[#ffffff08] justify-center w-full md:w-11/12 min-h-[20rem] md:p-8 lg:p-16;
+  @apply grid grid-cols-1 items-center md:bg-[#ffffff08] justify-center w-full md:w-11/12 min-h-[20rem] p-4 md:p-8 lg:p-16;
 }
 
 .contact__form > h3 {

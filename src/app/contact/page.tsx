@@ -112,7 +112,7 @@ export default function Contact() {
   return (
     <>
       <Toastify />
-      <main className="main h-[100vh]">
+      <main className="main min-h-[100vh]">
         <section className="contact relative">
           <div className="flare--one"></div>
           <div className="flare--two"></div>

@@ -56,8 +56,8 @@ specific technologies or APIs, and any other competition-specific requirements.`
       <div className="flare--two"></div>{" "}
       <div className="container w-full">
         <SectionDescription
-          title="Rules and"
-          subTitle="Guidelines"
+          title="Judging Criteria"
+          subTitle="Key attributes"
           content={
             <>
               {judgingCriteria}

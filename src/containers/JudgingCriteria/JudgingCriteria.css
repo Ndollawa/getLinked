@@ -6,7 +6,7 @@
   @apply md:min-h-[50vh] w-full;
 }
 .judging-criteria .circle-gradient {
-  @apply hidden md:block w-32 h-32 z-[-1] rounded-full bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] absolute left-20 -top-8;
+  @apply hidden md:block md:w-24 md:h-24  lg:w-32 lg:h-32 z-[-1] rounded-full bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] absolute md:left-[10%] md:-top-[10%] lg:left-[14%] lg:-top-[6%];
 }
 .judging-criteria .star--one {
   @apply absolute left-32 -top-32;

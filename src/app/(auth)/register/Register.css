@@ -1,5 +1,5 @@
 .registration {
-  @apply h-[100vh] w-full text-white relative;
+  @apply min-h-[100vh] overflow-x-hidden w-full text-white relative;
 }
 .registration .flare--one {
   @apply -left-56 top-0;

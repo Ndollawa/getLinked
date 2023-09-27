@@ -151,7 +151,7 @@ export default function Register() {
     <>
       <Toastify />
       {success && <Success show={success} />}
-      <main className="main h-[100vh]">
+      <main className="main min-h-[100vh]">
         <section className="registration relative">
           <div className="flare--one"></div>
           <div className="flare--two"></div>

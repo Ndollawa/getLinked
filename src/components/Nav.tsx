@@ -21,7 +21,7 @@ const Nav = () => {
 
     const sections = document.querySelectorAll("section");
     const menuLinks = document.querySelectorAll(".nav__menu ul li a");
-
+    console.log(menuLinks);
     const handleSectionScroll = () => {
       const top = window.scrollY;
 

@@ -23,7 +23,7 @@ header.sticky {
 .nav__menu {
   @apply w-72 shadow-md md:shadow-none z-[9999] md:z-0 md:w-[70%] absolute  top-20 md:top-0 md:right-0 right-2  bg-[--primary-color] md:bg-none md:relative md:flex md:items-center md:justify-between;
 }
-@media screen and (max-width: 32rem) {
+@media screen and (max-width: calc(48rem - 0.5px)) {
   .nav__menu {
     position: fixed;
     transform-origin: left center;
