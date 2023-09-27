@@ -6,7 +6,7 @@
 }
 
 .registration__box {
-  @apply flex flex-wrap items-center justify-center container z-[1] relative;
+  @apply flex flex-wrap items-center justify-center container z-[1] relative  mb-20 md:mb-10;
 }
 .registration__box--details {
   @apply grid grid-cols-1 w-full md:w-4/12 lg:w-6/12 items-center justify-center m-auto  z-[1];
