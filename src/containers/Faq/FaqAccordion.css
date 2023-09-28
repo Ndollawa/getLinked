@@ -1,8 +1,8 @@
 .accordion {
-  @apply py-5 border-b-2 border-[--secondary-color];
+  @apply py-5 border-b-2 text-white border-[--secondary-color];
 }
 .accordion__heading {
-  @apply flex justify-between font-semibold items-center font-medium cursor-pointer list-none group-open:mb-5;
+  @apply flex justify-between font-semibold items-center cursor-pointer list-none group-open:mb-5;
 }
 .accordion__heading .accordion__icon {
   @apply transition group-open:rotate-180 secondary-text-color;

@@ -56,20 +56,20 @@
 }
 
 .hero__content--intro__box div > h1 {
-  @apply relative inline w-full md:w-[100%] lg:w-[80%] text-3xl  md:text-3xl lg:text-4xl mb-5 text-white font-extrabold;
+  @apply relative inline w-full md:w-[100%] lg:w-[80%] text-3xl min-[376px]:text-4xl max-md:text-3xl  md:text-3xl lg:text-4xl mb-5 text-white font-extrabold;
 }
 .hero__content--intro__box div {
   @apply w-full md:w-[100%] lg:w-[80%];
 }
 
 .hero__content--intro__box div > h1 span {
-  @apply secondary-text-color;
+  @apply text-[--secondary-color];
 }
 .hero__content--intro__box div > p {
   @apply md:text-xl text-white  text-justify md:text-start px-4 mb-6 z-[1];
 }
 .hero__content--intro__box > button {
-  @apply mb-8 md:mb-16 mt-2 self-center md:self-start text-xl cta-btn;
+  @apply mb-8 md:mb-16 mt-2 self-center md:self-start text-xl  rounded cursor-pointer hover:opacity-90 text-white bg-gradient-to-r from-[--secondary-color] to-[--tertiary-color] px-4 py-2 w-36 flex items-center justify-center;
 }
 .hero__content--timer {
   @apply mb-4 flex justify-center md:justify-start;

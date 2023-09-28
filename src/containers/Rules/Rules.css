@@ -44,3 +44,6 @@
 .rules .star--two {
   @apply absolute right-[1rem] bottom-8 opacity-60;
 }
+.rules .content__wrapper--contentbox .content {
+  @apply text-white text-base  z-[1] md:text-left text-center;
+}

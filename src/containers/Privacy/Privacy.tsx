@@ -20,8 +20,8 @@ const PrivacySection = () => {
           subTitle="Terms"
           description={
             <>
-              <p className="p-muted">Last updated on September 12, 2023</p>
-              <p className="mb-3">
+              <p className="p-muted mb-2">Last updated on September 12, 2023</p>
+              <p className="mb-2">
                 Below are our privacy & policy, which outline a lot of goodies.
                 it’s our aim to always take of our participant
               </p>
@@ -29,7 +29,7 @@ const PrivacySection = () => {
           }
           content={
             <>
-              <div className="privacy__container">
+              <div className="privacy__container mt-5 p-5">
                 <div className="z-[1]">
                   <p className="">
                     At getlinked tech Hackathon 1.0, we value your privacy and
@@ -102,17 +102,10 @@ const PrivacySection = () => {
           dir="rtl"
           media={
             <>
-              <div className="relative grid place-content-center">
+              <div className="privacy__images">
                 <div className="security">
                   <Image src={Vector} width={360} alt="q-1" />
                 </div>
-
-                {/* <div className="question--two">
-                <Image src={Question} width={40} alt="q-2" />
-              </div>
-              <div className="question--three">
-                <Image src={Question} width={25} alt="q-3" />
-              </div> */}
 
                 <Image
                   src={Security}

@@ -17,3 +17,6 @@
 .judging-criteria .star--three {
   @apply absolute left-[30rem] bottom-0;
 }
+.judging-criteria .content__wrapper--contentbox .content {
+  @apply text-white text-base  z-[1] md:text-left text-center;
+}

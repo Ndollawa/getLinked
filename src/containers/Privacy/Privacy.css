@@ -1,21 +1,22 @@
 .privacy {
-  @apply lg:min-h-[100vh] w-full;
+  @apply lg:min-h-[100vh] w-full pt-10 md:pt-2;
 }
 .privacy .ds {
   @apply mx-4 sm:mx-8 md:mx-16;
 }
 .privacy .security {
-  @apply md:absolute animate-bounce w-[18rem] sm:w-[24rem] md:w-[70%]  sm:left-8 sm:-top-16 md:left-16 md:-top-36 z-[-1];
+  @apply absolute flex place-items-center animate-bounce left-[40%]   w-[90%] top-0 z-[-1];
+}
+.privacy .security img {
+  @apply w-[40%];
+}
+.privacy .privacy__images {
+  @apply relative grid place-content-center place-items-center p-5;
 }
 .privacy div img.lock {
-  @apply w-[18rem] z-[1] sm:w-[24rem] md:w-[70%];
+  @apply z-[1] w-[95%] m-auto;
 }
-.faq .question--two {
-  @apply absolute left-12 -top-3 sm:left-24 sm:-top-6 md:left-48 md:-top-12;
-}
-.faq .question--three {
-  @apply absolute sm:left-32 sm:top-4 md:left-72 md:top-8;
-}
+/* */
 .privacy .p-muted {
   @apply text-sm text-gray-400 sm:mb-5 md:mb-10;
 }
@@ -23,7 +24,7 @@
 .privacy__container {
   background: rgba(217, 217, 217, 0.03);
 
-  @apply w-full p-2 sm:p-4 md:p-8 border-[--secondary-color] border-2 rounded-lg min-h-[20rem] flex flex-col items-center md:justify-start justify-center mb-5;
+  @apply w-full px-3 py-6 sm:px-4 sm:py-8 md:px-8 md:py-16 border-[--secondary-color] border-2 rounded-lg min-h-[20rem] flex flex-col items-center md:justify-start justify-center mb-5;
 }
 .privacy__container > div {
   @apply flex flex-col items-center md:justify-start justify-center;
