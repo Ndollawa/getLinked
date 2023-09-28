@@ -29,3 +29,6 @@
   @apply w-8/12;
 }
 /*   h-[57.88%] w-[35.5%]  animate-spin  */
+.about .content__wrapper--contentbox .content {
+  @apply text-white text-base  z-[1] md:text-left text-center;
+}

@@ -57,40 +57,42 @@ specific technologies or APIs, and any other competition-specific requirements.`
       </div>
       <div className="flare--one"></div>
       <div className="flare--two"></div>
-      <SectionDescription
-        title="Frequently Asked"
-        subTitle="Questions"
-        description="We got answers to the questions that you might
+      <div className="container">
+        <SectionDescription
+          title="Frequently Asked"
+          subTitle="Questions"
+          description="We got answers to the questions that you might
 want to ask about getlinked Hackathon 1.0"
-        content={
-          <>
-            <div className="z-[2] mx-auto my-5 px-5">
-              <div className="grid divide-y divide-neutral-200 max-w-xl mx-auto mt-8">
-                {faqsData}
+          content={
+            <>
+              <div className="z-[2] mx-auto my-5 px-5">
+                <div className="grid divide-y divide-neutral-200 max-w-xl mx-auto mt-8">
+                  {faqsData}
+                </div>
               </div>
-            </div>
-          </>
-        }
-        dir="rtl"
-        media={
-          <>
-            <div className="relative">
-              <div className="question--one">
-                <Image src={Question} width={25} alt="q-1" />
-              </div>
+            </>
+          }
+          dir="rtl"
+          media={
+            <>
+              <div className="relative">
+                <div className="question--one">
+                  <Image src={Question} width={25} alt="q-1" />
+                </div>
 
-              <div className="question--two">
-                <Image src={Question} width={40} alt="q-2" />
-              </div>
-              <div className="question--three">
-                <Image src={Question} width={25} alt="q-3" />
-              </div>
+                <div className="question--two">
+                  <Image src={Question} width={40} alt="q-2" />
+                </div>
+                <div className="question--three">
+                  <Image src={Question} width={25} alt="q-3" />
+                </div>
 
-              <Image src={img} alt="rules and guidelines" />
-            </div>
-          </>
-        }
-      />
+                <Image src={img} alt="rules and guidelines" />
+              </div>
+            </>
+          }
+        />
+      </div>
     </section>
   );
 };

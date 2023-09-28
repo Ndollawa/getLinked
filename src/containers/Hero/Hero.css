@@ -46,7 +46,7 @@
   @apply relative p-4 text-center md:text-start;
 }
 .hero__content--intro__box--heading__image--one {
-  @apply absolute w-6 -top-4 right-20 md:w-10 lg:w-12 md:right-[6rem] lg:right-[11rem] md:-top-10;
+  @apply absolute w-6 -top-4 right-20 min-[375.1px]:right-[25%] max-sm:right-20 md:w-10 lg:w-12 md:right-[6rem] lg:right-[11rem] md:-top-10;
 }
 .hero__content--intro__box--heading__image--two {
   @apply inline align-middle w-8 md:w-10 lg:w-12 relative bottom-3 ml-2;
@@ -56,7 +56,7 @@
 }
 
 .hero__content--intro__box div > h1 {
-  @apply relative inline w-full md:w-[100%] lg:w-[80%] text-3xl min-[376px]:text-4xl max-md:text-3xl  md:text-3xl lg:text-4xl mb-5 text-white font-extrabold;
+  @apply relative inline w-full md:w-[100%] lg:w-[80%] text-3xl min-[420px]:text-4xl max-md:text-3xl  md:text-3xl lg:text-4xl mb-5 xl:text-6xl text-white font-extrabold;
 }
 .hero__content--intro__box div {
   @apply w-full md:w-[100%] lg:w-[80%];
